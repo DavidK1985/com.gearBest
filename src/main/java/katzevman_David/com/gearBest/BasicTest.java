@@ -1,5 +1,7 @@
 package katzevman_David.com.gearBest;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -27,9 +29,13 @@ public class BasicTest
 		driver.get("https://www.gearbest.com/");
 		
 		WebElement newUserCoupon = driver.findElement(By.className("siteNewUser_detail"));
+		WebElement gearBestHomeButton = driver.findElement(By.className("headLogo"));
 		if(newUserCoupon.isDisplayed()) {
 			WebElement newUserCouponXButton = driver.findElement(By.id("layui-layer1"));
-			newUserCouponXButton.click();	
+			newUserCouponXButton.click();
+			
+			driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+			gearBestHomeButton.click();
 		}
 		
 	}
