@@ -16,5 +16,10 @@ public class By2 {
 	public String toString() {
 		return description + " (" + by + ")";
 	}
+
+	public boolean isDisplayed() {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }
 

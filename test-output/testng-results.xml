@@ -2,20 +2,24 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="6021" started-at="2019-04-06T13:11:00Z" finished-at="2019-04-06T13:11:06Z">
+  <suite name="Default suite" duration-ms="54439" started-at="2019-06-27T09:55:35Z" finished-at="2019-06-27T09:56:29Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="6021" started-at="2019-04-06T13:11:00Z" finished-at="2019-04-06T13:11:06Z">
-      <class name="katzevman_David.com.gearBest.BasicTest">
-        <test-method status="PASS" signature="beforTest()[pri:0, instance:katzevman_David.com.gearBest.BasicTest@10e41621]" name="beforTest" is-config="true" duration-ms="2595" started-at="2019-04-06T13:11:00Z" finished-at="2019-04-06T13:11:02Z">
+    <test name="Default test" duration-ms="54439" started-at="2019-06-27T09:55:35Z" finished-at="2019-06-27T09:56:29Z">
+      <class name="katzevman_David.com.gearBest.tests.Test1">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:katzevman_David.com.gearBest.tests.Test1@3fee9989]" name="beforeTest" is-config="true" duration-ms="4221" started-at="2019-06-27T09:55:35Z" finished-at="2019-06-27T09:55:39Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforTest -->
-        <test-method status="PASS" signature="_01_0_openAndSearchGearBest()[pri:0, instance:katzevman_David.com.gearBest.BasicTest@10e41621]" name="_01_0_openAndSearchGearBest" duration-ms="3406" started-at="2019-04-06T13:11:02Z" finished-at="2019-04-06T13:11:06Z">
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="gearBestLandingPageSearch()[pri:0, instance:katzevman_David.com.gearBest.tests.Test1@3fee9989]" name="gearBestLandingPageSearch" duration-ms="47258" started-at="2019-06-27T09:55:39Z" finished-at="2019-06-27T09:56:26Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- _01_0_openAndSearchGearBest -->
-      </class> <!-- katzevman_David.com.gearBest.BasicTest -->
+        </test-method> <!-- gearBestLandingPageSearch -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:katzevman_David.com.gearBest.tests.Test1@3fee9989]" name="afterTest" is-config="true" duration-ms="2927" started-at="2019-06-27T09:56:26Z" finished-at="2019-06-27T09:56:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- katzevman_David.com.gearBest.tests.Test1 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

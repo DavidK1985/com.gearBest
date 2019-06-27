@@ -3,12 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="katzevman_David.com.gearBest.BasicTest">
+      <class name="katzevman_David.com.gearBest.tests.Test1">
         <methods>
-          <include name="beforTest"/>
-          <include name="_01_0_openAndSearchGearBest"/>
+          <include name="afterTest"/>
+          <include name="gearBestLandingPageSearch"/>
+          <include name="beforeTest"/>
         </methods>
-      </class> <!-- katzevman_David.com.gearBest.BasicTest -->
+      </class> <!-- katzevman_David.com.gearBest.tests.Test1 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

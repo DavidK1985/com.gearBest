@@ -8,7 +8,7 @@ import il.co.topq.difido.model.Enums.Status;
 
 public class AssertUtils {
 
-private static ReportDispatcher report = ReportManager.getInstance();
+	private static ReportDispatcher report = ReportManager.getInstance();
 	
 	public static void assertEquals(Object actual, Object expected, String message) {
 		assertEquals(actual, expected, message, false);

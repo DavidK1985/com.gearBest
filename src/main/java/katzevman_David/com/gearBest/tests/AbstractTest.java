@@ -11,7 +11,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 
 import katzevman_David.com.gearBest.Infra.config.MainConfig;
-import katzevman_David.com.gearBest.Infra.web.WebDiverFactory;
+import katzevman_David.com.gearBest.Infra.web.WebDriverFactory;
 
 import il.co.topq.difido.ReportDispatcher;
 import il.co.topq.difido.ReportManager;
@@ -30,7 +30,7 @@ public abstract class AbstractTest {
 		
 		if (driver == null) {
 			
-			driver = WebDiverFactory.getWebDriver(MainConfig.webDriverType);
+			driver = WebDriverFactory.getWebDriver(MainConfig.webDriverType);
 		}
 	}
 	
@@ -54,7 +54,7 @@ public abstract class AbstractTest {
 	public void afterTest() throws Exception {
 		
 		takeScreenshot("Browser state at test end");
-		
+//		MainConfig.closeBrowserAtTestEnd = true;
 		if (driver != null && MainConfig.closeBrowserAtTestEnd) {
 			driver.close();
 		}

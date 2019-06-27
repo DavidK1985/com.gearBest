@@ -9,6 +9,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import katzevman_David.com.gearBest.Infra.utils.AssertUtils;
+
 public class BasicTest 
 {
 	public WebDriver driver;
@@ -26,7 +28,8 @@ public class BasicTest
 	
 	@Test
 	public void _01_0_openAndSearchGearBest() {
-		driver.get("https://www.gearbest.com/");
+		String webAdrres = "https://www.gearbest.com/";
+		driver.get(webAdrres);
 		
 		WebElement newUserCoupon = driver.findElement(By.className("siteNewUser_detail"));
 		WebElement gearBestHomeButton = driver.findElement(By.className("headLogo"));
@@ -35,8 +38,15 @@ public class BasicTest
 			newUserCouponXButton.click();
 			
 			driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
-			gearBestHomeButton.click();
+//			gearBestHomeButton.click();
 		}
 		
+//		String newWebAdrres = driver.getCurrentUrl();
+//		
+//		AssertUtils.assertEquals(newWebAdrres , webAdrres, "our current web addres is"+newWebAdrres);
+//		
+//		System.out.println("our current web addres is"+newWebAdrres);
 	}
+	
+	
 }

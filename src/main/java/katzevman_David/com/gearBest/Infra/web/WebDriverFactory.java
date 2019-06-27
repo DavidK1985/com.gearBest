@@ -13,10 +13,9 @@ import il.co.topq.difido.ReportDispatcher;
 import il.co.topq.difido.ReportManager;
 
 
-public class WebDiverFactory {
+public class WebDriverFactory {
 
-
-	private static ReportDispatcher report = ReportManager.getInstance(); 
+	private static ReportDispatcher report = ReportManager.getInstance();
 	
 	public static WebDriver getWebDriver(WebDriverType webDriverType) {
 		
