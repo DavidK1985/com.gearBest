@@ -20,6 +20,7 @@ public class GearBestLandingPage extends AbstractPage {
 	public GearBestLandingPage(WebDriver driver) throws Exception {
 		super(driver,newUserCoupon);
 	}
+
 	//, gearBestHomeButton, searchBox, goButton
 	public void closePopup() {
 		if(bot.isElementDisplayed1(newUserCouponXButton)) {

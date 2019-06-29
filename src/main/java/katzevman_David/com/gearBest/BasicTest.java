@@ -28,18 +28,28 @@ public class BasicTest
 	
 	@Test
 	public void _01_0_openAndSearchGearBest() {
-		String webAdrres = "https://www.gearbest.com/";
-		driver.get(webAdrres);
+//		String webAdrres = "https://www.gearbest.com/";
+//		driver.get(webAdrres);
+//		
+//		WebElement newUserCoupon = driver.findElement(By.className("siteNewUser_detail"));
+//		WebElement gearBestHomeButton = driver.findElement(By.className("headLogo"));
+//		if(newUserCoupon.isDisplayed()) {
+//			WebElement newUserCouponXButton = driver.findElement(By.id("layui-layer1"));
+//			newUserCouponXButton.click();
+//			
+//			driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+////			gearBestHomeButton.click();
+//		}
+		String value1 = "$1325.4";
+		String digits1 = value1.replaceFirst(value1, "");
+		int newPrice = Integer.parseInt(digits1);
 		
-		WebElement newUserCoupon = driver.findElement(By.className("siteNewUser_detail"));
-		WebElement gearBestHomeButton = driver.findElement(By.className("headLogo"));
-		if(newUserCoupon.isDisplayed()) {
-			WebElement newUserCouponXButton = driver.findElement(By.id("layui-layer1"));
-			newUserCouponXButton.click();
-			
-			driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
-//			gearBestHomeButton.click();
-		}
+		String value2 = "$13254";
+		String digits2 = value2.replaceFirst(value2, "");
+		int oldPrice = Integer.parseInt(digits2);
+		
+		int discount = newPrice / oldPrice ;
+		System.out.println( newPrice+ "/"+ oldPrice+ "*"+"100"+" = " +discount*100);
 		
 //		String newWebAdrres = driver.getCurrentUrl();
 //		

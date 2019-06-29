@@ -4,19 +4,23 @@ import java.io.FileInputStream;
 import java.io.InputStream;
 import java.util.Properties;
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
+
 import org.testng.annotations.Test;
 
 import katzevman_David.com.gearBest.Infra.Pages.GearBestLandingPage;
+import katzevman_David.com.gearBest.Infra.Pages.GearBestProductPage;
 import katzevman_David.com.gearBest.Infra.Pages.GearBestSearchResultsPage;
 import katzevman_David.com.gearBest.Infra.config.MainConfig;
 
 
-public class Test1 extends AbstractTest {
+public class Test3 extends AbstractTest {
 
 	private String searchTerm;
+	private int resultNumber = resultIndex();
 	// search for an object from the shopping cart text file on gear best and see that the result contains it
 	@Test
-	public void _0_01_gearBestLandingPageSearch() throws Exception {
+	public void _0_02_gearBestIndevidualProductTest() throws Exception {
 
 		initTestParams();
 		// Step 1 - Browse to GearBest.com landing page
@@ -36,13 +40,28 @@ public class Test1 extends AbstractTest {
 		GearBestSearchResultsPage gearBestSearchResultsPage = gearBestLandingPage.clickOnGoButton();
 		report.endLevel();
 
-		// Step 4 - compare the results to the search term		
-		report.startLevel("Step 4 - check if the results contain the search term by randomly pulling on one of the head lines");
-		String resultTitle = gearBestSearchResultsPage.getSearchResultTitleByIndex(resultIndex());
+		// Step 4 - Checking the search result on a random item 
+		report.startLevel("Step 4 - Checking the search result by comering the search item to random item");
+		String resultTitle = gearBestSearchResultsPage.getSearchResultTitleByIndex(resultNumber);
 		gearBestSearchResultsPage.comperResult(resultTitle, searchTerm);
+		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 		report.endLevel();
- 
+
+		// Step 5 - entering the product page 
+		report.startLevel("Step 5 - entering the product page");
+		gearBestSearchResultsPage.ChosenProduct(resultNumber);
+		GearBestProductPage gearBestProductPage = gearBestSearchResultsPage.clickOnSearchResultTitle(resultNumber);
+		report.endLevel();
+
+		// Step 6 - Going back to the home page 
+		report.startLevel("Step 6 - Going back to the home page");
+		gearBestProductPage.backToHomePage();
+		report.endLevel();
+
+
+
 	}
+
 
 	private void initTestParams() throws Exception {
 
@@ -51,7 +70,7 @@ public class Test1 extends AbstractTest {
 		prop.load(input);
 		searchTerm = prop.getProperty("searchTerm");
 	}
-	
+
 	private int resultIndex() {
 		Random objGenerator = new Random();
 		int randomNumber = objGenerator.nextInt(5);
