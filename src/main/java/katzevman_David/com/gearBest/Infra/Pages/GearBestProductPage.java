@@ -14,10 +14,11 @@ public class GearBestProductPage extends AbstractPage {
 	private static final By2 currentPrice = new By2("The current price for the item", By.xpath("//div[@class='goodsIntro_priceWrap']/span[@data-currency]"));
 	private static final By2 pastPrice = new By2("The old price for the item", By.xpath("//div[@class='goodsIntro_priceWrap']/del[@data-currency]"));
 	private static final By2 shownDiscount = new By2("The Discount shown for this item", By.xpath("//div[@class='goodsIntro_priceWrap']/span[@class='goodsIntro_discount']"));
-	private static final By2 productTitle= new By2("The product name", By.xpath("//div[@class='goodsIntro_titleBox']"));
+	private static final By2 productTitle_full= new By2("The product name", By.xpath("//div[@class='goodsIntro_titleBox']"));
+	private static final By2 productTitle= new By2("The product name", By.xpath("//h1[@class='goodsIntro_title']"));
 	private static final By2 productTitleAddOn= new By2("The product name", By.xpath("//span[@class='goodsIntro_title-prop']"));
 	private static final By2 gearBestHomeButton = new By2("The Home Button", By.className("headLogo"));
-	
+
 	public GearBestProductPage(WebDriver driver) throws Exception {
 		super(driver);
 	}
@@ -45,19 +46,24 @@ public class GearBestProductPage extends AbstractPage {
 	}
 
 	public void nameComperison(String resultsPageProductName) {
+		String productPageHeader_full = bot.getElementText(productTitle_full);
 		String productPageHeader = bot.getElementText(productTitle);
 		String productPageHeaderAddOn = bot.getElementText(productTitleAddOn);
-		if (productPageHeader.equalsIgnoreCase(resultsPageProductName)) {
+
+		if (productPageHeader_full.equalsIgnoreCase(resultsPageProductName)) {
 			report.step("The headline from the results page is identical to the product page");
 		}
-		else {
-			report.step("The headline from the results page is not identical to the product page," 
-		+"the diffrens between them is the added word: "+productPageHeaderAddOn+" in the product page headline");
 
+		else if (productPageHeader.equalsIgnoreCase(resultsPageProductName)) {
+			report.step("The headline from the results page is similar to the product page but it has an added script, '- "
+					+productPageHeaderAddOn +"'");
+		}
+		else {
+			report.step("The headline from the results page is not identical");
 		}
 
 	}
-	
+
 	public void backToHomePage() {
 		bot.click(gearBestHomeButton);
 	}

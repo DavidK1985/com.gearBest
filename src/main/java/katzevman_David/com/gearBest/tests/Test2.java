@@ -64,6 +64,7 @@ public class Test2 extends AbstractTest {
 		gearBestProductPage.discountCheck();
 		report.endLevel();
 
+	//	if(g) {}
 	}
 
 
