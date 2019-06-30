@@ -23,7 +23,7 @@ public class Test2 extends AbstractTest {
 	public void _0_02_gearBestIndevidualProductTest() throws Exception {
 
 		initTestParams();
-		// Step 1 - Browse to GearBest.com landing page
+		// Step 
 		report.startLevel("Step 1 - Browse to GearBest.com landing page");
 		browseToUrl(MainConfig.baseUrl);
 		GearBestLandingPage gearBestLandingPage = new GearBestLandingPage(driver);
@@ -52,6 +52,8 @@ public class Test2 extends AbstractTest {
 		report.startLevel("Step 5 - compering the product name to the one seen in the result page");
 		String resultsPageProductName = gearBestSearchResultsPage.ChosenProduct(resultNumber);
 		GearBestProductPage gearBestProductPage = gearBestSearchResultsPage.clickOnSearchResultTitle(resultNumber);
+		
+		//If I have time - add a catch exception loop to fix ACCESS DINAIED issue in the clickOnSearchResultTitle function
 		report.endLevel();
 	
 		// Step 6 - product page 
@@ -59,12 +61,13 @@ public class Test2 extends AbstractTest {
 		gearBestProductPage.nameComperison(resultsPageProductName);
 		report.endLevel();
 		
+		
+		
 		// Step 7 - product page discount Check
 		report.startLevel("Step 7 - click on product number "+resultNumber+" and see if there is a discount");
 		gearBestProductPage.discountCheck();
 		report.endLevel();
 
-	//	if(g) {}
 	}
 
 

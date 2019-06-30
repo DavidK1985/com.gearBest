@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="24890" started-at="2019-06-29T19:26:42Z" finished-at="2019-06-29T19:27:07Z">
+  <suite name="Default suite" duration-ms="23014" started-at="2019-06-30T17:34:49Z" finished-at="2019-06-30T17:35:12Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="24890" started-at="2019-06-29T19:26:42Z" finished-at="2019-06-29T19:27:07Z">
+    <test name="Default test" duration-ms="23014" started-at="2019-06-30T17:34:49Z" finished-at="2019-06-30T17:35:12Z">
       <class name="katzevman_David.com.gearBest.tests.Test2">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:katzevman_David.com.gearBest.tests.Test2@3fee9989]" name="beforeTest" is-config="true" duration-ms="3615" started-at="2019-06-29T19:26:42Z" finished-at="2019-06-29T19:26:46Z">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:katzevman_David.com.gearBest.tests.Test2@3fee9989]" name="beforeTest" is-config="true" duration-ms="3657" started-at="2019-06-30T17:34:49Z" finished-at="2019-06-30T17:34:52Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="_0_02_gearBestIndevidualProductTest()[pri:0, instance:katzevman_David.com.gearBest.tests.Test2@3fee9989]" name="_0_02_gearBestIndevidualProductTest" duration-ms="20360" started-at="2019-06-29T19:26:46Z" finished-at="2019-06-29T19:27:06Z">
+        <test-method status="PASS" signature="_0_02_gearBestIndevidualProductTest()[pri:0, instance:katzevman_David.com.gearBest.tests.Test2@3fee9989]" name="_0_02_gearBestIndevidualProductTest" duration-ms="18394" started-at="2019-06-30T17:34:52Z" finished-at="2019-06-30T17:35:11Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- _0_02_gearBestIndevidualProductTest -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:katzevman_David.com.gearBest.tests.Test2@3fee9989]" name="afterTest" is-config="true" duration-ms="883" started-at="2019-06-29T19:27:06Z" finished-at="2019-06-29T19:27:07Z">
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:katzevman_David.com.gearBest.tests.Test2@3fee9989]" name="afterTest" is-config="true" duration-ms="927" started-at="2019-06-30T17:35:11Z" finished-at="2019-06-30T17:35:12Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
