@@ -40,7 +40,7 @@ public class GearBestProductPage extends AbstractPage {
 			discount = 100-discount;
 			discount = Math.round(discount);
 			int finalDiscount = (int)discount;
-			report.step("The Price ("+newPrice+"$) for this product contains a discount of "+finalDiscount+"% from the origianl price of "+oldPrice+"$ );
+			report.step("The Price ($"+newPrice+") for this product contains a discount of "+finalDiscount+"% from the origianl price of $"+oldPrice);
 			
 			String value3 = bot.getElementText(shownDiscount);
 			String digits3 = value3.replaceAll("[^0-9.]", "");

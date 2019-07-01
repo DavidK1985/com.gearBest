@@ -1,8 +1,11 @@
 package katzevman_David.com.gearBest.Infra.Pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
 
 import katzevman_David.com.gearBest.Infra.web.By2;
 
@@ -13,7 +16,8 @@ public class GearBestLandingPage extends AbstractPage {
 	private static final By2 searchBox = new By2("Main search box", By.className("headSearch_formIpt"));
 	private static final By2 goButton = new By2("'Go' button", By.id("js-btnSubmitSearch"));
 	private static final By2 newUserCouponXButton = new By2 ("X Button", By.className("layui-layer-setwin"));
-//	private static final By2 newUserCouponXButton = new By2 ("X Button", By.className("icon-arrow-line"));
+	private static final By2 superDealsBanner = new By2 ("Super deals banner", By.xpath("//div[@class='indexDeals_banner']"));
+//	https://www.gearbest.com/flash-sale.html
 //	private static final By2 signInSecurlyButtonBy = new By2("'Sign-in securely' button", By.id("a-autoid-0-announce"));
 //	private static final By2 amazonMusicLink = new By2("'Amazon Music' link", By.xpath("//a[text()='Amazon Music']"));
 	
@@ -37,6 +41,12 @@ public class GearBestLandingPage extends AbstractPage {
 		return new GearBestSearchResultsPage(driver);
 	}
 	
+	public void clickSuperDealsBanner() {
+		Actions action = new Actions(driver);
+		action.sendKeys(Keys.PAGE_DOWN).build().perform();
+        
+		bot.click(superDealsBanner);
+	}
 //	
 //	public void WaitForSignInSecurlyButtonEnabled() {
 //		bot.waitForElementToBeClickable(signInSecurlyButtonBy);

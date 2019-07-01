@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="katzevman_David.com.gearBest.tests.Test2">
+      <class name="katzevman_David.com.gearBest.tests.Test4">
         <methods>
-          <include name="_0_02_gearBestIndevidualProductTest"/>
+          <include name="_0_04_gearBestFlashSale"/>
           <include name="afterTest"/>
           <include name="beforeTest"/>
         </methods>
-      </class> <!-- katzevman_David.com.gearBest.tests.Test2 -->
+      </class> <!-- katzevman_David.com.gearBest.tests.Test4 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
