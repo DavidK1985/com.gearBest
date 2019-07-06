@@ -14,10 +14,11 @@ public class GearBestSearchResultsPage extends AbstractPage{
 
 	private static final By2 gearBestHomeButton = new By2("The Home Button", By.className("headLogo"));
 	private static final By2 accessDenied = new By2("A headline shown when a failure to access the pruduct page", By.xpath("//h1"));
+	private static final By2 amountOfResultsFound = new By2("Aamount of results found ", By.xpath("//h1[@class='cateMain_cateTitle']/span"));
 
 
 	public GearBestSearchResultsPage(WebDriver driver) throws Exception {
-		super(driver, gearBestHomeButton);
+		super(driver);
 	}
 
 	public void goToHomePage () {
@@ -34,17 +35,6 @@ public class GearBestSearchResultsPage extends AbstractPage{
 
 		By2 randomResultchoice = new By2("results number "+ resultIndex +" in the search page" , By.xpath("//li[@data-index='" + resultIndex + "']"));
 		bot.click(randomResultchoice);
-
-		//		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
-		//		while(accessDenied.isDisplayed()) {
-		//				report.step("there has been a failure to access the pruduct page, please run test again");
-		//				JavascriptExecutor js = (JavascriptExecutor) driver; 
-		//				js.executeScript("window.history.go(-1)");
-		//				bot.click(randomResultchoice);
-		//			}
-
-
-
 		return new GearBestProductPage(driver);
 	}
 
@@ -53,11 +43,7 @@ public class GearBestSearchResultsPage extends AbstractPage{
 		String ChosenProduct = bot.getElementText(productName);
 		report.step("The Headline found in the search results page is: "+ChosenProduct);
 		return ChosenProduct;
-
 	}
-
-
-
 
 	public void comperResult(String resultTitle, String searchTerm) throws Exception {
 		boolean comperResult= true;
@@ -77,4 +63,33 @@ public class GearBestSearchResultsPage extends AbstractPage{
 		}
 	}
 
+	public int amountOfResults() {
+		String value = bot.getElementText(amountOfResultsFound);
+		String digits = value.replaceAll("[^0-9.]", "");
+		int resultsfound = Integer.parseInt(digits);
+		return resultsfound;
+	}
+
+	public void trueFlashSale(int resultsFound,Float ProductPrice, String resultTitle) {
+////need to find a way to extract multipel price points 
+		if(resultsFound==1)
+			report.step("This product is one of a kind");
+		else if (resultsFound>1) {
+			for (int i = 0; i < resultsFound; i++) {
+				String [] itemResults = new String [resultsFound];
+				if (resultTitle.equalsIgnoreCase(itemResults[i])) {
+					Float [] itemResultPrice = new Float [resultsFound];
+					if(ProductPrice== itemResultPrice[i]) {
+						i++;	
+					}
+					else if(ProductPrice > itemResultPrice[i]) {
+						report.step("The product "+itemResults[i]+" is similar to "+resultTitle+" and costs less");
+						break;
+					}
+				}
+			}
+		}
+	}
+	
+	
 }

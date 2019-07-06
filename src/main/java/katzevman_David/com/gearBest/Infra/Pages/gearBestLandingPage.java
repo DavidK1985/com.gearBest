@@ -41,11 +41,11 @@ public class GearBestLandingPage extends AbstractPage {
 		return new GearBestSearchResultsPage(driver);
 	}
 	
-	public void clickSuperDealsBanner() {
+	public GearBestProductFlashSalePage clickSuperDealsBanner() throws Exception {
 		Actions action = new Actions(driver);
 		action.sendKeys(Keys.PAGE_DOWN).build().perform();
-        
-		bot.click(superDealsBanner);
+        bot.click(superDealsBanner);
+		return new GearBestProductFlashSalePage(driver);
 	}
 //	
 //	public void WaitForSignInSecurlyButtonEnabled() {

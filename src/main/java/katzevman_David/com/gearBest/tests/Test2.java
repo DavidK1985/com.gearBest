@@ -6,24 +6,29 @@ import java.util.Properties;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.Test;
 
+import katzevman_David.com.gearBest.Infra.Pages.GearBestAccsesDeniedPage;
 import katzevman_David.com.gearBest.Infra.Pages.GearBestLandingPage;
 import katzevman_David.com.gearBest.Infra.Pages.GearBestProductPage;
 import katzevman_David.com.gearBest.Infra.Pages.GearBestSearchResultsPage;
 import katzevman_David.com.gearBest.Infra.config.MainConfig;
+import katzevman_David.com.gearBest.Infra.web.By2;
 
 
 public class Test2 extends AbstractTest {
 
 	private String searchTerm;
 	private int resultNumber = resultIndex();
-	// search for an object from the shopping cart text file on gear best and see that the result contains it
+	// search for an object from the shopping cart text file on gear best and see that a specific product is thesame in the product page as it appears in the search results page
 	@Test
 	public void _0_02_gearBestIndevidualProductTest() throws Exception {
+		//If I have time - add a catch exception loop to fix ACCESS DINAIED issue in the clickOnSearchResultTitle function
 
 		initTestParams();
-		// Step 
+		// Step 1 - Browse to GearBest.com landing page
 		report.startLevel("Step 1 - Browse to GearBest.com landing page");
 		browseToUrl(MainConfig.baseUrl);
 		GearBestLandingPage gearBestLandingPage = new GearBestLandingPage(driver);
@@ -52,16 +57,21 @@ public class Test2 extends AbstractTest {
 		report.startLevel("Step 5 - compering the product name to the one seen in the result page");
 		String resultsPageProductName = gearBestSearchResultsPage.ChosenProduct(resultNumber);
 		GearBestProductPage gearBestProductPage = gearBestSearchResultsPage.clickOnSearchResultTitle(resultNumber);
-		
-		//If I have time - add a catch exception loop to fix ACCESS DINAIED issue in the clickOnSearchResultTitle function
+		GearBestAccsesDeniedPage gearBestAccsesDeniedPage = new GearBestAccsesDeniedPage(driver);
 		report.endLevel();
 	
+		
+		
 		// Step 6 - product page 
 		report.startLevel("Step 6 - compering the product name to the one seen in the result page");
-		gearBestProductPage.nameComperison(resultsPageProductName);
+		boolean failedToLoad = gearBestAccsesDeniedPage.accessDenied();
+		while(failedToLoad) {
+			resultNumber = resultIndex();
+			gearBestSearchResultsPage.clickOnSearchResultTitle(resultNumber);
+			failedToLoad = gearBestAccsesDeniedPage.accessDenied();
+		}
+			gearBestProductPage.nameComperison(resultsPageProductName);	
 		report.endLevel();
-		
-		
 		
 		// Step 7 - product page discount Check
 		report.startLevel("Step 7 - click on product number "+resultNumber+" and see if there is a discount");
@@ -69,7 +79,6 @@ public class Test2 extends AbstractTest {
 		report.endLevel();
 
 	}
-
 
 	private void initTestParams() throws Exception {
 
@@ -81,7 +90,7 @@ public class Test2 extends AbstractTest {
 
 	private int resultIndex() {
 		Random objGenerator = new Random();
-		int randomNumber = objGenerator.nextInt(5);
+		int randomNumber = objGenerator.nextInt(10);
 		return randomNumber;
 
 	}

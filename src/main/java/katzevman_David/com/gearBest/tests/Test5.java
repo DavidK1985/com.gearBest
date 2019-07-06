@@ -13,14 +13,11 @@ import katzevman_David.com.gearBest.Infra.Pages.GearBestProductPage;
 import katzevman_David.com.gearBest.Infra.Pages.GearBestSearchResultsPage;
 import katzevman_David.com.gearBest.Infra.config.MainConfig;
 
-
-public class Test3 extends AbstractTest {
+public class Test5 extends AbstractTest {
 
 	private String searchTerm;
-	private String searchTerm2;
 	private int resultNumber = resultIndex();
 	// search for an object from the shopping cart text file on gear best and after finding that item returning to the home page
-	//and searching for another item
 	@Test
 	public void _0_02_gearBestIndevidualProductTest() throws Exception {
 
@@ -49,22 +46,6 @@ public class Test3 extends AbstractTest {
 		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 		report.endLevel();
 
-		// Step 5 - entering the product page 
-		report.startLevel("Step 5 - entering the product page");
-		gearBestSearchResultsPage.ChosenProduct(resultNumber);
-		GearBestProductPage gearBestProductPage = gearBestSearchResultsPage.clickOnSearchResultTitle(resultNumber);
-		report.endLevel();
-
-		// Step 6 - Going back to the home page 
-		report.startLevel("Step 6 - Going back to the home page");
-		gearBestProductPage.backToHomePage();
-		report.endLevel();
-
-		// Step 7 - Write a search term from the shopping cart text file in the search bar and click the search button
-		report.startLevel("Step 7 - Write a new search term from the shopping cart text file in the search bar");
-		gearBestLandingPage.writeToSearchbox(searchTerm2);
-		gearBestLandingPage.clickOnGoButton();
-		report.endLevel();
 	}
 
 
@@ -74,7 +55,6 @@ public class Test3 extends AbstractTest {
 		InputStream input = new FileInputStream("src/main/resources/config/shoppingCartTest.properties");
 		prop.load(input);
 		searchTerm = prop.getProperty("searchTerm");
-		searchTerm2 = prop.getProperty("searchTerm2");
 	}
 
 	private int resultIndex() {
@@ -84,3 +64,4 @@ public class Test3 extends AbstractTest {
 
 	}
 }
+
