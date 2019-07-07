@@ -1,14 +1,10 @@
 package katzevman_David.com.gearBest.tests;
 
-import java.io.FileInputStream;
-import java.io.InputStream;
-import java.util.Properties;
 import java.util.Random;
 
-import org.openqa.selenium.interactions.Action;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
+import katzevman_David.com.gearBest.Infra.Pages.GearBestAccsesDeniedPage;
 import katzevman_David.com.gearBest.Infra.Pages.GearBestLandingPage;
 import katzevman_David.com.gearBest.Infra.Pages.GearBestProductFlashSalePage;
 import katzevman_David.com.gearBest.Infra.Pages.GearBestSearchResultsPage;
@@ -20,7 +16,8 @@ public class Test4 extends AbstractTest{
 
 	// going into the flash sale page on gear best and see if the product that appears on the sale does not appear in a 
 	// different sale at a different price
-	@Test
+	
+	@Test (groups = {"Regression"})
 	public void _0_04_gearBestFlashSale() throws Exception {
 
 		// Step 1 - Browse to GearBest.com landing page
@@ -50,25 +47,38 @@ public class Test4 extends AbstractTest{
 		report.startLevel("Step 5 - ");
 		gearBestProductFlashSalePage.writeToSearchbox(resultTitle);
 		GearBestSearchResultsPage gearBestSearchResultsPage = gearBestLandingPage.clickOnGoButton();
+
+		GearBestAccsesDeniedPage gearBestAccsesDeniedPage = new GearBestAccsesDeniedPage(driver);
+		boolean failedToLoad = gearBestAccsesDeniedPage.accessDenied();
+		while(failedToLoad) {
+			resultNumber = resultIndex();
+			failedToLoad = gearBestAccsesDeniedPage.accessDenied();
+			resultTitle = gearBestProductFlashSalePage.getSearchResultTitleByIndex(resultNumber);
+			ProductPrice = gearBestProductFlashSalePage.getSearchResultPriceByIndex(resultNumber);
+			gearBestProductFlashSalePage.writeToSearchbox(resultTitle);
+			gearBestLandingPage.clickOnGoButton();
+			failedToLoad = gearBestAccsesDeniedPage.accessDenied();
+		}
+
 		report.endLevel();
 
 		// Step 6 - see if there are any other products that are similar
 		report.startLevel("Step 6 - ");
 		int productAmount = gearBestSearchResultsPage.amountOfResults();
 		report.endLevel();
-		
+
 		// Step 7 - if there are any other products that are similar compare prices, if the one on hot sell is cheaper 
 		// then report PASS other wise report FAIL
-				report.startLevel("Step 7 - ");
-				gearBestSearchResultsPage.trueFlashSale(productAmount, ProductPrice, resultTitle);
-				report.endLevel();
+		report.startLevel("Step 7 - ");
+		gearBestSearchResultsPage.trueFlashSale(productAmount, ProductPrice, resultTitle);
+		report.endLevel();
 
 
 	}
 
 	private int resultIndex() {
 		Random objGenerator = new Random();
-		int randomNumber = objGenerator.nextInt(5);
+		int randomNumber = objGenerator.nextInt(10);
 		return randomNumber;
 
 	}

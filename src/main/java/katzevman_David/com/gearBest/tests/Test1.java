@@ -15,10 +15,13 @@ public class Test1 extends AbstractTest {
 
 	private String searchTerm;
 	// search for an object from the shopping cart text file on gear best and see that the result contains it
-	@Test
+	
+	@Test (groups = {"Regression"})
 	public void _0_01_gearBestLandingPageSearch() throws Exception {
 
 		initTestParams();
+		report.step("this test will search for an object from the shopping cart text file on gearbest.com and and see that the result contains it");
+
 		// Step 1 - Browse to GearBest.com landing page
 		report.startLevel("Step 1 - Browse to GearBest.com landing page");
 		browseToUrl(MainConfig.baseUrl);
@@ -41,7 +44,6 @@ public class Test1 extends AbstractTest {
 		String resultTitle = gearBestSearchResultsPage.getSearchResultTitleByIndex(resultIndex());
 		gearBestSearchResultsPage.comperResult(resultTitle, searchTerm);
 		report.endLevel();
- 
 	}
 
 	private void initTestParams() throws Exception {

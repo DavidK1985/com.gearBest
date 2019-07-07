@@ -1,13 +1,10 @@
 package katzevman_David.com.gearBest.tests;
 
-import java.io.FileInputStream;
-import java.io.InputStream;
-import java.util.Properties;
 import java.util.Random;
-import java.util.concurrent.TimeUnit;
 
 import org.testng.annotations.Test;
 
+import katzevman_David.com.gearBest.Infra.Pages.GearBestAccsesDeniedPage;
 import katzevman_David.com.gearBest.Infra.Pages.GearBestLandingPage;
 import katzevman_David.com.gearBest.Infra.Pages.GearBestProductPage;
 import katzevman_David.com.gearBest.Infra.Pages.GearBestSearchResultsPage;
@@ -15,13 +12,12 @@ import katzevman_David.com.gearBest.Infra.config.MainConfig;
 
 public class Test5 extends AbstractTest {
 
-	private String searchTerm;
 	private int resultNumber = resultIndex();
 	// search for an object from the shopping cart text file on gear best and after finding that item returning to the home page
-	@Test
-	public void _0_02_gearBestIndevidualProductTest() throws Exception {
 
-		initTestParams();
+	@Test (groups = {"Regression"})
+	public void _0_05_gearBestIndevidualCategoryTest() throws Exception {
+
 		// Step 1 - Browse to GearBest.com landing page
 		report.startLevel("Step 1 - Browse to GearBest.com landing page");
 		browseToUrl(MainConfig.baseUrl);
@@ -33,33 +29,36 @@ public class Test5 extends AbstractTest {
 		gearBestLandingPage.closePopup();
 		report.endLevel();
 
-		// Step 3 - Write a search term from the shopping cart text file in the search bar and click the search button
-		report.startLevel("Step 3 - Write a search term from the shopping cart text file in the search bar");
-		gearBestLandingPage.writeToSearchbox(searchTerm);
-		GearBestSearchResultsPage gearBestSearchResultsPage = gearBestLandingPage.clickOnGoButton();
+		// Step 3 - Pick a random category out of the category box in the front page
+		report.startLevel("Step 3 - Pick a random category out of the category box in the front page");
+		String chosenCategory = gearBestLandingPage.choseRandomCategory(resultNumber);
 		report.endLevel();
 
-		// Step 4 - Checking the search result on a random item 
-		report.startLevel("Step 4 - Checking the search result by comering the search item to random item");
-		String resultTitle = gearBestSearchResultsPage.getSearchResultTitleByIndex(resultNumber);
-		gearBestSearchResultsPage.comperResult(resultTitle, searchTerm);
-		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+		// Step 4 - Pick a random search result 
+		report.startLevel("Step 4 - Pick a random search result out of the category result page");
+		GearBestSearchResultsPage gearBestSearchResultsPage = new GearBestSearchResultsPage(driver);
+		GearBestProductPage gearBestProductPage = gearBestSearchResultsPage.clickOnSearchResultTitle(resultNumber);
+
+		GearBestAccsesDeniedPage gearBestAccsesDeniedPage = new GearBestAccsesDeniedPage(driver);
+		boolean failedToLoad = gearBestAccsesDeniedPage.accessDenied();
+		while(failedToLoad) {
+			resultNumber = resultIndex();
+			gearBestSearchResultsPage.clickOnSearchResultTitle(resultNumber);
+			failedToLoad = gearBestAccsesDeniedPage.accessDenied();
+		}
 		report.endLevel();
 
-	}
-
-
-	private void initTestParams() throws Exception {
-
-		Properties prop = new Properties();
-		InputStream input = new FileInputStream("src/main/resources/config/shoppingCartTest.properties");
-		prop.load(input);
-		searchTerm = prop.getProperty("searchTerm");
-	}
+		// Step 5 - Summary 
+		report.startLevel("Step 5 - Results summery");
+		String productTitle = gearBestProductPage.GetproductTitle();
+		String categoryTree = gearBestProductPage.GetCategoryTree();
+		report.step("In the "+chosenCategory+" we can find "+ productTitle+" as seen in the categoryTree: "+categoryTree);
+		report.endLevel();
+	}	
 
 	private int resultIndex() {
 		Random objGenerator = new Random();
-		int randomNumber = objGenerator.nextInt(5);
+		int randomNumber = objGenerator.nextInt(14);
 		return randomNumber;
 
 	}

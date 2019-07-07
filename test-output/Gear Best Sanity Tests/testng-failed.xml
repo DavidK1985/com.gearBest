@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Gear Best Sanity Tests]">
+  <test thread-count="5" name="Regression(failed)">
+    <groups>
+      <run>
+        <include name="Regression"/>
+        <exclude name="Sanity"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="katzevman_David.com.gearBest.tests.Test4">
+        <methods>
+          <include name="_0_04_gearBestFlashSale"/>
+          <include name="beforeTest"/>
+        </methods>
+      </class> <!-- katzevman_David.com.gearBest.tests.Test4 -->
+      <class name="katzevman_David.com.gearBest.tests.Test2">
+        <methods>
+          <include name="_0_02_gearBestIndevidualProductTest"/>
+          <include name="beforeTest"/>
+        </methods>
+      </class> <!-- katzevman_David.com.gearBest.tests.Test2 -->
+      <class name="katzevman_David.com.gearBest.tests.Test3">
+        <methods>
+          <include name="_0_02_gearBestIndevidualProductTest"/>
+          <include name="beforeTest"/>
+        </methods>
+      </class> <!-- katzevman_David.com.gearBest.tests.Test3 -->
+      <class name="katzevman_David.com.gearBest.tests.Test5">
+        <methods>
+          <include name="_0_02_gearBestIndevidualProductTest"/>
+          <include name="beforeTest"/>
+        </methods>
+      </class> <!-- katzevman_David.com.gearBest.tests.Test5 -->
+    </classes>
+  </test> <!-- Regression(failed) -->
+</suite> <!-- Failed suite [Gear Best Sanity Tests] -->

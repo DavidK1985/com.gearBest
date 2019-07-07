@@ -1,7 +1,5 @@
 package katzevman_David.com.gearBest.Infra.Pages;
 
-import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -18,11 +16,10 @@ public class GearBestAccsesDeniedPage extends AbstractPage{
 
 	public boolean accessDenied() throws Exception {
 		//		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
-		boolean webFailure = false;
+		boolean webFailure = false; 
 		if(bot.isElementDisplayed1(accessDenied)) {
 			webFailure = true;
-
-			report.step("there has been a failure to access the product page, please run test again");
+			report.step("there has been a failure to access the product page, will run previous step again");
 			JavascriptExecutor js = (JavascriptExecutor) driver; 
 			js.executeScript("window.history.go(-1)");
 		}

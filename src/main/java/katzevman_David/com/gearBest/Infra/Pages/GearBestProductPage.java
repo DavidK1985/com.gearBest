@@ -1,12 +1,6 @@
 package katzevman_David.com.gearBest.Infra.Pages;
 
-import static org.testng.Assert.assertEquals;
-
-import java.util.concurrent.TimeUnit;
-
-import org.omg.CORBA.PUBLIC_MEMBER;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 
 import katzevman_David.com.gearBest.Infra.web.By2;
@@ -21,15 +15,14 @@ public class GearBestProductPage extends AbstractPage {
 	private static final By2 productTitle= new By2("The product name", By.xpath("//h1[@class='goodsIntro_title']"));
 	private static final By2 productTitleAddOn= new By2("The product name", By.xpath("//span[@class='goodsIntro_title-prop']"));
 	private static final By2 gearBestHomeButton = new By2("The Home Button", By.className("headLogo"));
+	private static final By2 categoryTree = new By2("The category tree for this product", By.xpath("//ul[@class='cGoodsCrumb_wrap']"));
 
 	public GearBestProductPage(WebDriver driver) throws Exception {
 		super(driver);
 	}
 
 	public void discountCheck() throws Exception {
-
 		if (bot.isElementDisplayed1(shownDiscount)) {
-
 			if(currentPrice == pastPrice) {
 				report.step("This result does not contains a discount");}
 			else {
@@ -57,7 +50,6 @@ public class GearBestProductPage extends AbstractPage {
 				else {
 					report.step("The discount that is shown on the website incorrect, it should be: "+finalDiscount+"%");	
 				}
-
 			}
 		}
 		else {
@@ -66,20 +58,27 @@ public class GearBestProductPage extends AbstractPage {
 
 	}
 
+	public String GetproductTitle() {
+		String Title = bot.getElementText(productTitle);
+		report.step("the product name is: "+Title);
+		return Title;
+	}
+	
+	public String GetCategoryTree() {
+		String Title = bot.getElementText(categoryTree);
+		report.step("the category Tree name is: "+Title);
+		return Title;
+	}
 
 
 	public void nameComperison(String resultsPageProductName) throws Exception {
-
-
 		String productPageHeader_full = bot.getElementText(productTitle_full);
 		String productPageHeader = bot.getElementText(productTitle);
 		String productPageHeaderAddOn = bot.getElementText(productTitleAddOn);
 
-
 		if (productPageHeader_full.equalsIgnoreCase(resultsPageProductName)) {
 			report.step("The headline from the results page is identical to the product page");
 		}
-
 		else if (productPageHeader.equalsIgnoreCase(resultsPageProductName)) {
 			report.step("The headline from the results page is similar to the product page but it has an added script, '- "
 					+productPageHeaderAddOn +"'");
@@ -87,7 +86,6 @@ public class GearBestProductPage extends AbstractPage {
 		else {
 			report.step("The headline from the results page is not identical");
 		}
-
 	}
 
 	public void backToHomePage() {

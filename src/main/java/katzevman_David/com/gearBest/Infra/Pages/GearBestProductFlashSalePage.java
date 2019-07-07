@@ -1,11 +1,8 @@
 package katzevman_David.com.gearBest.Infra.Pages;
 
-import java.util.ArrayList;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import katzevman_David.com.gearBest.Infra.entities.Product;
 import katzevman_David.com.gearBest.Infra.web.By2;
 
 public class GearBestProductFlashSalePage extends AbstractPage{

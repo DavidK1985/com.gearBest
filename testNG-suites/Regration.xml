@@ -1,0 +1,20 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Gear Best Sanity Tests" verbose="1">
+
+	<!-- Run all tests in the specified classes -->
+	<test name="Regression">
+		<groups>
+			<run>
+				<include name="Regression" />
+				<exclude name="Sanity" />
+			</run>
+		</groups>
+
+		<packages>
+			<package name="katzevman_David.com.gearBest.tests" />
+		</packages>
+
+	</test>
+</suite>

@@ -8,6 +8,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.testng.annotations.Test;
 
+import katzevman_David.com.gearBest.Infra.Pages.GearBestAccsesDeniedPage;
 import katzevman_David.com.gearBest.Infra.Pages.GearBestLandingPage;
 import katzevman_David.com.gearBest.Infra.Pages.GearBestProductPage;
 import katzevman_David.com.gearBest.Infra.Pages.GearBestSearchResultsPage;
@@ -21,8 +22,9 @@ public class Test3 extends AbstractTest {
 	private int resultNumber = resultIndex();
 	// search for an object from the shopping cart text file on gear best and after finding that item returning to the home page
 	//and searching for another item
-	@Test
-	public void _0_02_gearBestIndevidualProductTest() throws Exception {
+
+	@Test (groups = {"Regression"})
+	public void _0_03_gearBestSearchbarTests() throws Exception {
 
 		initTestParams();
 		// Step 1 - Browse to GearBest.com landing page
@@ -57,6 +59,13 @@ public class Test3 extends AbstractTest {
 
 		// Step 6 - Going back to the home page 
 		report.startLevel("Step 6 - Going back to the home page");
+		GearBestAccsesDeniedPage gearBestAccsesDeniedPage = new GearBestAccsesDeniedPage(driver);
+		boolean failedToLoad = gearBestAccsesDeniedPage.accessDenied();
+		while(failedToLoad) {
+			resultNumber = resultIndex();
+			gearBestSearchResultsPage.clickOnSearchResultTitle(resultNumber);
+			failedToLoad = gearBestAccsesDeniedPage.accessDenied();
+		}
 		gearBestProductPage.backToHomePage();
 		report.endLevel();
 
@@ -64,12 +73,32 @@ public class Test3 extends AbstractTest {
 		report.startLevel("Step 7 - Write a new search term from the shopping cart text file in the search bar");
 		gearBestLandingPage.writeToSearchbox(searchTerm2);
 		gearBestLandingPage.clickOnGoButton();
+
+		failedToLoad = gearBestAccsesDeniedPage.accessDenied();
+		while(failedToLoad) {
+			int counter = 0;
+			gearBestLandingPage.writeToSearchbox(searchTerm2);
+			gearBestLandingPage.clickOnGoButton();
+			failedToLoad = gearBestAccsesDeniedPage.accessDenied();
+			counter++;
+			if(counter>3) {
+				report.step("After over 7 triels we can confirm that the search bar is non respunsive");
+				break;			
+			}
+		}
+
+		report.endLevel();
+
+		// Step 8 - confirming the search results
+		report.startLevel("Step 8 - confirming the search results match the search term");
+		resultNumber = resultIndex();
+		resultTitle = gearBestSearchResultsPage.getSearchResultTitleByIndex(resultNumber);
+		gearBestSearchResultsPage.comperResult(resultTitle, searchTerm2);
 		report.endLevel();
 	}
 
 
 	private void initTestParams() throws Exception {
-
 		Properties prop = new Properties();
 		InputStream input = new FileInputStream("src/main/resources/config/shoppingCartTest.properties");
 		prop.load(input);
@@ -79,7 +108,7 @@ public class Test3 extends AbstractTest {
 
 	private int resultIndex() {
 		Random objGenerator = new Random();
-		int randomNumber = objGenerator.nextInt(5);
+		int randomNumber = objGenerator.nextInt(10);
 		return randomNumber;
 
 	}

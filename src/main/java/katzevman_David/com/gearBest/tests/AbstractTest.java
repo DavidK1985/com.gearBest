@@ -23,20 +23,21 @@ public abstract class AbstractTest {
 	protected static ReportDispatcher report = ReportManager.getInstance();
 	protected static WebDriver driver;
 
-	@BeforeMethod
+	
+	
+	@BeforeMethod(alwaysRun=true)
 	public void beforeTest() throws IOException {
 		
 		MainConfig.initFromFile("src/main/resources/config/MainConfig.properties");
 		
-		if (driver == null) {
-			
+		if (driver == null) {	
 			driver = WebDriverFactory.getWebDriver(MainConfig.webDriverType);
 		}
 	}
 	
 	public void browseToUrl(String url) {
 		report.log("Browsing to URL: " + url);
-		driver.get(url);
+		driver.get(url); 
 	}
 	
 	public static void takeScreenshot(String description) throws Exception {
@@ -49,6 +50,7 @@ public abstract class AbstractTest {
 			report.log("driver == null; Can't take screenshot.", Status.warning);
 		}
 	}
+	
 	
 	@AfterMethod
 	public void afterTest() throws Exception {
