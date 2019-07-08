@@ -1,6 +1,5 @@
 package katzevman_David.com.gearBest.Infra.Pages;
 
-import java.lang.reflect.Array;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -10,7 +9,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
 import katzevman_David.com.gearBest.Infra.web.By2;
-import net.bytebuddy.dynamic.scaffold.MethodRegistry.Handler.ForAbstractMethod;
 
 public class GearBestLandingPage extends AbstractPage {
 	
@@ -65,7 +63,7 @@ public class GearBestLandingPage extends AbstractPage {
 		for (int i = 0; i < mainCategoriesCount; i++) {
 			By2 boxMainCategories = new By2 ("Main Categories shortcuts", By.xpath("//ul[@class='headCate']/li["+i+"]"));
 			mainCategories[i] = boxMainCategories;
-			System.out.println(mainCategories[i]);
+//			System.out.println(mainCategories[i]);
 			}
 		return mainCategories;
 	}
@@ -75,7 +73,7 @@ public class GearBestLandingPage extends AbstractPage {
 		By2 [] mainCategories = creatMainCategoriesArray(CategoriesCount);
 		By2 randomCategory = mainCategories[resultIndex];
 		String chosenCategory = bot.getElementText(randomCategory);
-		report.step("the randomly choshen category is: "+ chosenCategory);
+		report.step("The randomly choshen category is: "+ chosenCategory);
 		bot.click(randomCategory);
 		return chosenCategory;
 		

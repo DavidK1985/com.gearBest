@@ -33,37 +33,38 @@ public class Test4 extends AbstractTest{
 
 		// Step 3 - scrawling down and pressing the SuperDealsBanner
 		report.startLevel("Step 3 - scrawl down and click the SuperDeals Banner");
-
 		GearBestProductFlashSalePage gearBestProductFlashSalePage = gearBestLandingPage.clickSuperDealsBanner();
 		report.endLevel();
 
 		// Step 4 - get the details for an item on sale
-		report.startLevel("Step 4 - ");
+		report.startLevel("Step 4 - Get the chosen product name and price");
 		String resultTitle = gearBestProductFlashSalePage.getSearchResultTitleByIndex(resultNumber);
 		Float ProductPrice = gearBestProductFlashSalePage.getSearchResultPriceByIndex(resultNumber);
 		report.endLevel();
 
 		// Step 5 - activate a search with the chosen item
-		report.startLevel("Step 5 - ");
+		report.startLevel("Step 5 - taking the randomly chosen product name and searching gear box to see if it truly is the better deal");
 		gearBestProductFlashSalePage.writeToSearchbox(resultTitle);
 		GearBestSearchResultsPage gearBestSearchResultsPage = gearBestLandingPage.clickOnGoButton();
-
+		
 		GearBestAccsesDeniedPage gearBestAccsesDeniedPage = new GearBestAccsesDeniedPage(driver);
 		boolean failedToLoad = gearBestAccsesDeniedPage.accessDenied();
 		while(failedToLoad) {
 			resultNumber = resultIndex();
-			failedToLoad = gearBestAccsesDeniedPage.accessDenied();
 			resultTitle = gearBestProductFlashSalePage.getSearchResultTitleByIndex(resultNumber);
 			ProductPrice = gearBestProductFlashSalePage.getSearchResultPriceByIndex(resultNumber);
 			gearBestProductFlashSalePage.writeToSearchbox(resultTitle);
 			gearBestLandingPage.clickOnGoButton();
 			failedToLoad = gearBestAccsesDeniedPage.accessDenied();
+			if(!failedToLoad){
+				report.step("Access Denied issue side steped");
+				}
 		}
 
 		report.endLevel();
 
 		// Step 6 - see if there are any other products that are similar
-		report.startLevel("Step 6 - ");
+		report.startLevel("Step 6 - counting all the results found in the search");
 		int productAmount = gearBestSearchResultsPage.amountOfResults();
 		report.endLevel();
 

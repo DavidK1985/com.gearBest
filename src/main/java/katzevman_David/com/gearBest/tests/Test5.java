@@ -45,6 +45,9 @@ public class Test5 extends AbstractTest {
 			resultNumber = resultIndex();
 			gearBestSearchResultsPage.clickOnSearchResultTitle(resultNumber);
 			failedToLoad = gearBestAccsesDeniedPage.accessDenied();
+			if(!failedToLoad){
+			report.step("Access Denied issue side steped");
+			}
 		}
 		report.endLevel();
 
@@ -52,7 +55,7 @@ public class Test5 extends AbstractTest {
 		report.startLevel("Step 5 - Results summery");
 		String productTitle = gearBestProductPage.GetproductTitle();
 		String categoryTree = gearBestProductPage.GetCategoryTree();
-		report.step("In the "+chosenCategory+" we can find "+ productTitle+" as seen in the categoryTree: "+categoryTree);
+		report.step("In the '"+chosenCategory+"' we can find '"+ productTitle+"'\nas seen in the category tree: '"+ categoryTree+"'");
 		report.endLevel();
 	}	
 
