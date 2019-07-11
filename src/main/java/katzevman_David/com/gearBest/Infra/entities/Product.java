@@ -1,40 +1,43 @@
 package katzevman_David.com.gearBest.Infra.entities;
 
+import java.awt.geom.Arc2D.Float;
+
 import katzevman_David.com.gearBest.Infra.web.By2;
 
 public class Product {
 
-	private By2 name;
-	private By2 price;
-	private By2 discount;
+	public static String[][] resultsFoundArray;
+	private String name;
+	private Float price;
+	private int discount; 
 
-	public Product (By2 productTitle, By2 ProductPrice, By2 productDiscount) {
-		this.name = productTitle;
-		this.price = ProductPrice;
-		this.discount = productDiscount;
-	}
+//	public Product (String productTitle,Float ProductPrice, int productDiscount) {
+//		this.name = productTitle;
+//		this.price = ProductPrice;
+//		this.discount = productDiscount;
+//	}
 
-	public By2 getName() {
+	public String getName() {
 		return name;
-	}
+	} 
 
-	public void setName(By2 name) {
+	public void setName(String name) {
 		this.name = name;
 	}
 
-	public By2 getPrice() {
+	public Float getPrice() {
 		return price;
 	}
 
-	public void setPrice(By2 price) {
+	public void setPrice(Float price) {
 		this.price = price;
 	}
 
-	public By2 getDiscount() {
+	public int getDiscount() {
 		return discount;
 	}
 
-	public void setDiscount(By2 discount) {
+	public void setDiscount(int discount) {
 		this.discount = discount;
 	}
 

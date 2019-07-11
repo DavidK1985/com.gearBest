@@ -95,10 +95,14 @@ public class GearBestSearchResultsPage extends AbstractPage{
 		}
 		else if (resultsFound>1) {
 			report.step("If there are similar results we try to eliminate them as better or otherwise prove there is a better deal");
+			
+			
+			
 			for (int i = 0; i < resultsFound; i++) {
+//				maybe impruve with a 2D array?				
 				String [] itemResults = new String [resultsFound];
 				for (int j = 0; j < resultsFound; j++) {
-				By2 tempResultTitle = new By2("product Title", By.xpath("//ul[@class='clearfix js_seachResultList' and not (@data-error-correct-name)]//li[@data-index="+j+"]//a[@title]"));
+				By2 tempResultTitle = new By2("product Title", By.xpath("//ul[@class='clearfix js_seachResultList' and not (@data-error-correct-name)]//li[@data-index="+j+"]//a[@title]"));			
 				itemResults[j] =  bot.getElementText(tempResultTitle);
 			}
 //				creating two shorter strings to compare the results by using a dedicated function and making them both
@@ -107,7 +111,6 @@ public class GearBestSearchResultsPage extends AbstractPage{
 				String itemResultsComper = titleShort(itemResults[i]);
 				String resultTitleComper = titleShort(resultTitle);
 				
-
 				if (resultTitleComper.equalsIgnoreCase(itemResultsComper)) {
 					report.step("The original product '"+resultTitle+"' has a similar name to this result: '"+itemResults[i]);
 //					we will now compare there prices to see if it is a better deal

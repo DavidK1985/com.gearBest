@@ -53,7 +53,7 @@ public class Test4 extends AbstractTest{
 			resultNumber = resultIndex();
 			resultTitle = gearBestProductFlashSalePage.getSearchResultTitleByIndex(resultNumber);
 			ProductPrice = gearBestProductFlashSalePage.getSearchResultPriceByIndex(resultNumber);
-			gearBestProductFlashSalePage.writeToSearchbox(resultTitle);
+			gearBestProductFlashSalePage.writeToSearchbox(gearBestSearchResultsPage.titleShort(resultTitle));
 			gearBestLandingPage.clickOnGoButton();
 			failedToLoad = gearBestAccsesDeniedPage.accessDenied();
 			if(!failedToLoad){

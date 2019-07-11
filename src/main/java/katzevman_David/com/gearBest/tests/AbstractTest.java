@@ -10,12 +10,11 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 
-import katzevman_David.com.gearBest.Infra.config.MainConfig;
-import katzevman_David.com.gearBest.Infra.web.WebDriverFactory;
-
 import il.co.topq.difido.ReportDispatcher;
 import il.co.topq.difido.ReportManager;
 import il.co.topq.difido.model.Enums.Status;
+import katzevman_David.com.gearBest.Infra.config.MainConfig;
+import katzevman_David.com.gearBest.Infra.web.WebDriverFactory;
 
 @Listeners(il.co.topq.difido.ReportManagerHook.class)
 public abstract class AbstractTest {

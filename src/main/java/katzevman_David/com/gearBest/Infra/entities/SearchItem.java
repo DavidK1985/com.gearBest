@@ -15,4 +15,4 @@ public class SearchItem {
 	public String toString() {
 		return "Search Item: " + searchTerm + "; check index: " + itemIndex + "; expected result: " + expectedResult;
 	}
-}
+} 
