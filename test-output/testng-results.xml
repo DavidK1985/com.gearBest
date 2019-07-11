@@ -1,62 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="84054" started-at="2019-07-10T18:54:17Z" finished-at="2019-07-10T18:55:42Z">
+  <suite name="Default suite" duration-ms="16968" started-at="2019-07-11T18:28:38Z" finished-at="2019-07-11T18:28:55Z">
     <groups>
       <group name="Regression">
-        <method signature="Test6._0_06_gearBestSideCategoryTest()[pri:0, instance:katzevman_David.com.gearBest.tests.Test6@7f0eb4b4]" name="_0_06_gearBestSideCategoryTest" class="katzevman_David.com.gearBest.tests.Test6"/>
+        <method signature="Test6._0_06_gearBestLinkTest1()[pri:0, instance:katzevman_David.com.gearBest.tests.Test6@3fee9989]" name="_0_06_gearBestLinkTest1" class="katzevman_David.com.gearBest.tests.Test6"/>
       </group> <!-- Regression -->
     </groups>
-    <test name="Default test" duration-ms="84054" started-at="2019-07-10T18:54:17Z" finished-at="2019-07-10T18:55:42Z">
+    <test name="Default test" duration-ms="16968" started-at="2019-07-11T18:28:38Z" finished-at="2019-07-11T18:28:55Z">
       <class name="katzevman_David.com.gearBest.tests.Test6">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:katzevman_David.com.gearBest.tests.Test6@7f0eb4b4]" name="beforeTest" is-config="true" duration-ms="3735" started-at="2019-07-10T18:54:17Z" finished-at="2019-07-10T18:54:21Z">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:katzevman_David.com.gearBest.tests.Test6@3fee9989]" name="beforeTest" is-config="true" duration-ms="3608" started-at="2019-07-11T18:28:38Z" finished-at="2019-07-11T18:28:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="FAIL" signature="_0_06_gearBestSideCategoryTest()[pri:0, instance:katzevman_David.com.gearBest.tests.Test6@7f0eb4b4]" name="_0_06_gearBestSideCategoryTest" duration-ms="20464" started-at="2019-07-10T18:54:21Z" finished-at="2019-07-10T18:54:42Z">
-          <exception class="java.lang.IndexOutOfBoundsException">
-            <message>
-              <![CDATA[Index: 0, Size: 0]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-at java.util.ArrayList.rangeCheck(Unknown Source)
-at java.util.ArrayList.get(Unknown Source)
-at katzevman_David.com.gearBest.Infra.Pages.GearBestLandingPage.createSideCategoriesArray(GearBestLandingPage.java:109)
-at katzevman_David.com.gearBest.tests.Test6._0_06_gearBestSideCategoryTest(Test6.java:32)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-at java.lang.reflect.Method.invoke(Unknown Source)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-at org.testng.TestNG.runSuites(TestNG.java:1049)
-at org.testng.TestNG.run(TestNG.java:1017)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.IndexOutOfBoundsException -->
+        <test-method status="PASS" signature="_0_06_gearBestLinkTest1()[pri:0, instance:katzevman_David.com.gearBest.tests.Test6@3fee9989]" name="_0_06_gearBestLinkTest1" duration-ms="12496" started-at="2019-07-11T18:28:42Z" finished-at="2019-07-11T18:28:55Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- _0_06_gearBestSideCategoryTest -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:katzevman_David.com.gearBest.tests.Test6@7f0eb4b4]" name="afterTest" is-config="true" duration-ms="24716" started-at="2019-07-10T18:54:46Z" finished-at="2019-07-10T18:55:11Z">
+        </test-method> <!-- _0_06_gearBestLinkTest1 -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:katzevman_David.com.gearBest.tests.Test6@3fee9989]" name="afterTest" is-config="true" duration-ms="830" started-at="2019-07-11T18:28:55Z" finished-at="2019-07-11T18:28:55Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->

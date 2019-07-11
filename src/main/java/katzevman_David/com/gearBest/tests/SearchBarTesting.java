@@ -15,7 +15,7 @@ import katzevman_David.com.gearBest.Infra.Pages.GearBestSearchResultsPage;
 import katzevman_David.com.gearBest.Infra.config.MainConfig;
 
 
-public class Test3 extends AbstractTest {
+public class SearchBarTesting extends AbstractTest {
 
 	private String searchTerm;
 	private String searchTerm2;

@@ -10,7 +10,7 @@ import katzevman_David.com.gearBest.Infra.Pages.GearBestProductFlashSalePage;
 import katzevman_David.com.gearBest.Infra.Pages.GearBestSearchResultsPage;
 import katzevman_David.com.gearBest.Infra.config.MainConfig;
 
-public class Test4 extends AbstractTest{
+public class MainCategoriesTesting_FlashSale extends AbstractTest{
 
 	private int resultNumber = resultIndex();
 

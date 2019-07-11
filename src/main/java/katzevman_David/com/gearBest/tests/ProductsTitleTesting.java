@@ -15,7 +15,7 @@ import katzevman_David.com.gearBest.Infra.Pages.GearBestSearchResultsPage;
 import katzevman_David.com.gearBest.Infra.config.MainConfig;
 
 
-public class Test2 extends AbstractTest {
+public class ProductsTitleTesting extends AbstractTest {
 
 	private String searchTerm;
 	private int resultNumber = resultIndex();
@@ -61,19 +61,14 @@ public class Test2 extends AbstractTest {
 
 		// Step 6 - product page 
 		report.startLevel("Step 6 - compering the product name to the one seen in the result page");
-		GearBestAccsesDeniedPage gearBestAccsesDeniedPage = new GearBestAccsesDeniedPage(driver);
-		boolean failedToLoad = gearBestAccsesDeniedPage.accessDenied();
-		while(failedToLoad) {
-			resultNumber = resultIndex();
-			gearBestSearchResultsPage.clickOnSearchResultTitle(resultNumber);
-			failedToLoad = gearBestAccsesDeniedPage.accessDenied();
-		}
+			GearBestAccsesDeniedPage gearBestAccsesDeniedPage = new GearBestAccsesDeniedPage(driver);
+			boolean failedToLoad = gearBestAccsesDeniedPage.accessDenied();
+			while(failedToLoad) {
+				resultNumber = resultIndex();
+				gearBestSearchResultsPage.clickOnSearchResultTitle(resultNumber);
+				failedToLoad = gearBestAccsesDeniedPage.accessDenied();
+			}
 		gearBestProductPage.nameComperison(resultsPageProductName);	
-		report.endLevel();
-
-		// Step 7 - product page discount Check
-		report.startLevel("Step 7 - click on product number "+resultNumber+" and see if there is a discount");
-		gearBestProductPage.discountCheck();
 		report.endLevel();
 
 	}

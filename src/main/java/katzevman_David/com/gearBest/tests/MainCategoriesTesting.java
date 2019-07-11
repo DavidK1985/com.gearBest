@@ -10,7 +10,7 @@ import katzevman_David.com.gearBest.Infra.Pages.GearBestProductPage;
 import katzevman_David.com.gearBest.Infra.Pages.GearBestSearchResultsPage;
 import katzevman_David.com.gearBest.Infra.config.MainConfig;
 
-public class Test5 extends AbstractTest {
+public class MainCategoriesTesting extends AbstractTest {
 
 	private int resultNumber = resultIndex();
 	// search for an object from the shopping cart text file on gear best and after finding that item returning to the home page

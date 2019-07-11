@@ -11,7 +11,7 @@ import katzevman_David.com.gearBest.Infra.Pages.GearBestSearchResultsPage;
 import katzevman_David.com.gearBest.Infra.config.MainConfig;
 
 
-public class Test1 extends AbstractTest {
+public class BasicUserFlow extends AbstractTest {
 
 	private String searchTerm;
 	// search for an object from the shopping cart text file on gear best and see that the result contains it

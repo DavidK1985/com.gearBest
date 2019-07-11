@@ -1,13 +1,10 @@
 package katzevman_David.com.gearBest.Infra.Pages;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 
 import katzevman_David.com.gearBest.Infra.web.By2;
 
@@ -79,39 +76,33 @@ public class GearBestLandingPage extends AbstractPage {
 
 	}
 
-	public void mobileIosApp() {
+	public ExternalLinks mobileIosApp() throws Exception {
 		scrallDownPage();
 
 		By2 mobileSiteLink = new By2 ("Super deals banner", By.xpath("//aside//i[@class='icon-qrcode']"));
 		By2 iosLink = new By2 ("Super deals banner", By.xpath("//aside//a/img[@alt='App for ios']"));
 
-		Actions action = new Actions(driver);
-		action.moveToElement((WebElement) mobileSiteLink).build().perform();
+		bot.hoverOverElement(mobileSiteLink);
 		bot.click(iosLink);
+		
+		return new ExternalLinks(driver);
 
 	}
-	
-	public void mobileAndroidApp() {
+
+	public ExternalLinks mobileAndroidApp() throws Exception{
 		scrallDownPage();
 
 		By2 mobileSiteLink = new By2 ("Super deals banner", By.xpath("//aside//i[@class='icon-qrcode']"));
 		By2 androidLink = new By2 ("Super deals banner", By.xpath("//aside//a/img[@alt='App for android']"));
 
-		Actions action = new Actions(driver);
-		action.moveToElement((WebElement) mobileSiteLink).build().perform();
+		bot.hoverOverElement(mobileSiteLink);
 		bot.click(androidLink);
-
+		
+		return new ExternalLinks(driver);
 	}
 
-	//	public By2[] createSideCategoriesArray (int sideCategoriesCount) {
-	//		By2[] sideCategories = new By2[sideCategoriesCount];
-	//		for (int i = 0; i < sideCategoriesCount; i++) {
-	//			By2 sideBarCategories = new By2 ("Side Categories shortcuts", By.xpath("//aside//i[contains(@class,'icon')]"));
-	//			sideCategories[i] = sideBarCategories;
-	//			System.out.println(sideCategories[i]);
-	//			}
-	//		return sideCategories;
-	//	}
+
+
 	//	
 	//	public void WaitForSignInSecurlyButtonEnabled() {
 	//		bot.waitForElementToBeClickable(signInSecurlyButtonBy);
