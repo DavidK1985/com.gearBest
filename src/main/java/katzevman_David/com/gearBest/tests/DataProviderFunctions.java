@@ -22,6 +22,7 @@ public class DataProviderFunctions extends AbstractTest{
 		browseToUrl(MainConfig.baseUrl);
 
 		GearBest_LandingPage gearBestLandingPage = new GearBest_LandingPage(driver);
+		gearBestLandingPage.closePopup();
 		gearBestLandingPage.writeToSearchbox(searchItem.searchTerm);
 		
 		GearBest_SearchResultsPage gearBestSearchResultsPage = gearBestLandingPage.clickOnGoButton();
@@ -32,45 +33,45 @@ public class DataProviderFunctions extends AbstractTest{
 		AssertUtils.assertTrue(searchResultTitle.contains(searchItem.expectedResult), "Expecting to see '" + searchItem.expectedResult + "' in first result");
 	}
 
-	@Test(dataProvider = "simpleParamsProvider")
-	public void searchFromMainLandingPage1(String searchTerm, int index, String expected) {
-		
-		report.log("searchTerm = " + searchTerm);
-		report.log("itemIndex = " + index);
-		report.log("expectedResult = " + expected);
-	}
-	
-	@DataProvider(name = "simpleParamsProvider")
-	public Object[][] dataProvider1() {
-	
-		Object[][] params = new Object[2][3];
-		
-		params[0][0] = "IPhone";
-		params[0][1] = 3;
-		params[0][2] = "IPhone 6";
-		
-		params[1][0] = "Galaxy";
-		params[1][1] = 4;
-		params[1][2] = "Galaxy S9+";
-
-		return params;
-	}
-	
-	@DataProvider(name = "objectParamsProvider")
-	public Object[][] dataProvider2() {
-		
-		Object[][] params = new Object[3][1];
-		
-		SearchItem searchItem1 = new SearchItem("IPhone", 3, "IPhone 6");
-		SearchItem searchItem2 = new SearchItem("Galaxy", 4, "Galaxy S9+");
-		SearchItem searchItem3 = new SearchItem("Nokia", 1, "Nokia 3200");
-		
-		params[0][0] = searchItem1;
-		params[1][0] = searchItem2;
-		params[2][0] = searchItem3;
-
-		return params;
-	}
+//	@Test(dataProvider = "simpleParamsProvider")
+//	public void searchFromMainLandingPage1(String searchTerm, int index, String expected) {
+//		
+//		report.log("searchTerm = " + searchTerm);
+//		report.log("itemIndex = " + index);
+//		report.log("expectedResult = " + expected);
+//	}
+//	
+//	@DataProvider(name = "simpleParamsProvider")
+//	public Object[][] dataProvider1() {
+//	
+//		Object[][] params = new Object[2][3];
+//		
+//		params[0][0] = "IPhone";
+//		params[0][1] = 3;
+//		params[0][2] = "IPhone 6";
+//		
+//		params[1][0] = "Galaxy";
+//		params[1][1] = 4;
+//		params[1][2] = "Galaxy S9+";
+//
+//		return params;
+//	}
+//	
+//	@DataProvider(name = "objectParamsProvider")
+//	public Object[][] dataProvider2() {
+//		
+//		Object[][] params = new Object[3][1];
+//		
+//		SearchItem searchItem1 = new SearchItem("IPhone", 3, "IPhone 6");
+//		SearchItem searchItem2 = new SearchItem("Galaxy", 4, "Galaxy S9+");
+//		SearchItem searchItem3 = new SearchItem("Nokia", 1, "Nokia 3200");
+//		
+//		params[0][0] = searchItem1;
+//		params[1][0] = searchItem2;
+//		params[2][0] = searchItem3;
+//
+//		return params;
+//	}
 	
 	@DataProvider(name = "csvParamsProvider")
 	public Object[][] dataProvider3() throws Exception {

@@ -9,30 +9,24 @@
       </run>
     </groups>
     <classes>
-      <class name="katzevman_David.com.gearBest.tests.Test4">
+      <class name="katzevman_David.com.gearBest.tests.MainCategoriesTesting">
         <methods>
-          <include name="_0_04_gearBestFlashSale"/>
+          <include name="_0_06_gearBestIndevidualCategoryTest"/>
           <include name="beforeTest"/>
         </methods>
-      </class> <!-- katzevman_David.com.gearBest.tests.Test4 -->
-      <class name="katzevman_David.com.gearBest.tests.Test2">
+      </class> <!-- katzevman_David.com.gearBest.tests.MainCategoriesTesting -->
+      <class name="katzevman_David.com.gearBest.tests.ProductsDiscountTesting">
         <methods>
-          <include name="_0_02_gearBestIndevidualProductTest"/>
+          <include name="_0_02_gearBestIndevidualProductTest_1"/>
           <include name="beforeTest"/>
         </methods>
-      </class> <!-- katzevman_David.com.gearBest.tests.Test2 -->
-      <class name="katzevman_David.com.gearBest.tests.Test3">
+      </class> <!-- katzevman_David.com.gearBest.tests.ProductsDiscountTesting -->
+      <class name="katzevman_David.com.gearBest.tests.ProductsTitleTesting">
         <methods>
-          <include name="_0_02_gearBestIndevidualProductTest"/>
+          <include name="_0_03_gearBestIndevidualProductTest_2"/>
           <include name="beforeTest"/>
         </methods>
-      </class> <!-- katzevman_David.com.gearBest.tests.Test3 -->
-      <class name="katzevman_David.com.gearBest.tests.Test5">
-        <methods>
-          <include name="_0_02_gearBestIndevidualProductTest"/>
-          <include name="beforeTest"/>
-        </methods>
-      </class> <!-- katzevman_David.com.gearBest.tests.Test5 -->
+      </class> <!-- katzevman_David.com.gearBest.tests.ProductsTitleTesting -->
     </classes>
   </test> <!-- Regression(failed) -->
 </suite> <!-- Failed suite [Gear Best Sanity Tests] -->

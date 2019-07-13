@@ -15,7 +15,7 @@ public class MainCategoriesTesting extends AbstractTest {
 	private int resultNumber = resultIndex();
 	// search for an object from the shopping cart text file on gear best and after finding that item returning to the home page
 
-	@Test (groups = {"Regression"})
+	@Test (groups = {"Sanity"})
 	public void _0_06_gearBestIndevidualCategoryTest() throws Exception {
 
 		// Step 1 - Browse to GearBest.com landing page
@@ -39,6 +39,8 @@ public class MainCategoriesTesting extends AbstractTest {
 		GearBest_SearchResultsPage gearBestSearchResultsPage = new GearBest_SearchResultsPage(driver);
 		GearBest_ProductPage gearBestProductPage = gearBestSearchResultsPage.clickOnSearchResultTitle(resultNumber);
 
+//		Thread.sleep(1000);
+		
 		GearBest_AccsesDeniedPage gearBestAccsesDeniedPage = new GearBest_AccsesDeniedPage(driver);
 		boolean failedToLoad = gearBestAccsesDeniedPage.accessDenied();
 		while(failedToLoad) {

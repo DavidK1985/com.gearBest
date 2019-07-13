@@ -21,7 +21,7 @@ import katzevman_David.com.gearBest.Infra.config.MainConfig;
 	private int resultNumber = resultIndex();
 	// search for an object from the shopping cart text file on gear best and see that a specific product is the same in the product page as it appears in the search results page
 
-	@Test (groups = {"Regression"})
+	@Test (groups = {"Sanity"})
 	public void _0_02_gearBestIndevidualProductTest_1() throws Exception {
 
 		initTestParams();
@@ -56,6 +56,8 @@ import katzevman_David.com.gearBest.Infra.config.MainConfig;
 		// Step 5 - entering the product page 
 		report.startLevel("Step 5 - compering the product name to the one seen in the result page");
 		GearBest_ProductPage gearBestProductPage = gearBestSearchResultsPage.clickOnSearchResultTitle(resultNumber);
+		
+//		Thread.sleep(1000);
 		
 			GearBest_AccsesDeniedPage gearBestAccsesDeniedPage = new GearBest_AccsesDeniedPage(driver);
 			boolean failedToLoad = gearBestAccsesDeniedPage.accessDenied();

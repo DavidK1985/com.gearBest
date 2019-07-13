@@ -17,7 +17,7 @@ public class MainCategoriesTesting_FlashSale extends AbstractTest{
 	// going into the flash sale page on gear best and see if the product that appears on the sale does not appear in a 
 	// different sale at a different price
 	
-	@Test (groups = {"Regression"})
+	@Test (groups = {"Sanity"})
 	public void _0_05_gearBestFlashSale() throws Exception {
 
 		// Step 1 - Browse to GearBest.com landing page
@@ -46,6 +46,8 @@ public class MainCategoriesTesting_FlashSale extends AbstractTest{
 		report.startLevel("Step 5 - taking the randomly chosen product name and searching gear box to see if it truly is the better deal");
 		gearBestProductFlashSalePage.writeToSearchbox(resultTitle);
 		GearBest_SearchResultsPage gearBestSearchResultsPage = gearBestLandingPage.clickOnGoButton();
+		
+//		Thread.sleep(1000);
 		
 		GearBest_AccsesDeniedPage gearBestAccsesDeniedPage = new GearBest_AccsesDeniedPage(driver);
 		boolean failedToLoad = gearBestAccsesDeniedPage.accessDenied();

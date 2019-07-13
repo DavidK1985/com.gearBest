@@ -99,7 +99,7 @@ public class GearBest_SearchResultsPage extends AbstractPage{
 			
 			
 			for (int i = 0; i < resultsFound; i++) {
-//				maybe impruve with a 2D array?				
+//				maybe improve with a 2D array?				
 				String [] itemResults = new String [resultsFound];
 				for (int j = 0; j < resultsFound; j++) {
 				By2 tempResultTitle = new By2("product Title", By.xpath("//ul[@class='clearfix js_seachResultList' and not (@data-error-correct-name)]//li[@data-index="+j+"]//a[@title]"));			

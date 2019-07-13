@@ -23,7 +23,8 @@ public class SearchBarTesting extends AbstractTest {
 	// search for an object from the shopping cart text file on gear best and after finding that item returning to the home page
 	//and searching for another item
 
-	@Test (groups = {"Regression"})
+//	(groups = {"Regression"})
+	@Test 
 	public void _0_04_gearBestSearchbarTests() throws Exception {
 
 		initTestParams();

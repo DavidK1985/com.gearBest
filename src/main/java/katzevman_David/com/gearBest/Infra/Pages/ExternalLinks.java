@@ -1,10 +1,5 @@
 package katzevman_David.com.gearBest.Infra.Pages;
 
-import java.util.Set;
-import java.util.*;
-
-import javax.swing.text.html.HTMLDocument.Iterator;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -18,7 +13,6 @@ public class ExternalLinks extends AbstractPage{
 
 	private static final By2 faceBookLogo = new By2("The FaceBook logo", By.xpath("//html[@id='facebook']"));
 	private static final By2 googleLogo = new By2("The Google logo", By.xpath("//div[@class='GuHSXd']"));
-	private static final String Childwindow = null;
 
 
 	public ExternalLinks(WebDriver driver) throws Exception {
@@ -52,7 +46,7 @@ public class ExternalLinks extends AbstractPage{
 		//Store the current window handle
 		String winHandleBefore = driver.getWindowHandle();
 		//Perform the click operation that opens new window
-		
+
 		//Switch to new window opened
 		for(String winHandle : driver.getWindowHandles()){
 			driver.switchTo().window(winHandle);
@@ -60,7 +54,7 @@ public class ExternalLinks extends AbstractPage{
 
 		// Perform the actions on new window
 		boolean linkFailure = false;
-		
+
 		while(linkFailure == false) {
 			if(bot.isElementDisplayed1(faceBookLogo)) {
 				report.step("We have reached the FaceBook login from the Gear Best sign in page");
@@ -90,5 +84,5 @@ public class ExternalLinks extends AbstractPage{
 		//continue with original browser (first window)
 	}
 
-	
+
 }

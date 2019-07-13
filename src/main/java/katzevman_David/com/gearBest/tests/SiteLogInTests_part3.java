@@ -30,17 +30,44 @@ public class SiteLogInTests_part3 extends AbstractTest {
 		report.endLevel();
 
 		// Step 3 - Go to the sign in page
-		report.startLevel("Step 3 - ");
+		report.startLevel("Step 3 - click the sign in button");
 		GearBest_SignInPage gearBest_SignInPage = gearBestLandingPage.signIn();
 		report.endLevel();
 
-		// Step 4 - checking the external links to sign in
-		report.startLevel("Step 4 - checking the sign in with diffrent passwords and emails");
+		// Step 4 - enter a random email
+		report.startLevel("Step 4 - checking the sign in with email only");
 		String email = gearBest_SignInPage.randomEmailGenerator();
 		gearBest_SignInPage.writeToEmailInputBox(email);
-//		gearBest_SignInPage.clickSignInButton();
+		gearBest_SignInPage.clickSignInButton();
+		gearBest_SignInPage.inValidAct();
 		report.endLevel();
+
+
+		// Step 5 - Go to the sign in page
+		report.startLevel("Step 5 - checking the sign in with password only");
+		gearBest_SignInPage.writeToEmailInputBox("");
+		String password = gearBest_SignInPage.randomPasswordGenerator();
+		gearBest_SignInPage.writeToPasswordInputBox(password);
+		gearBest_SignInPage.clickSignInButton();
+		gearBest_SignInPage.inValidAct();
+		report.endLevel();
+
+		//"Step 6 - checking the sign in with a password and an email"
+		report.startLevel("Step 6 - checking the sign in with a password and an email");
+		email = gearBest_SignInPage.randomEmailGenerator();
+		gearBest_SignInPage.writeToEmailInputBox(email);
+		password = gearBest_SignInPage.randomPasswordGenerator();
+		gearBest_SignInPage.writeToPasswordInputBox(password);
+		gearBest_SignInPage.clickSignInButton();
+		report.endLevel();
+		
+//		//"Step 7 - checking the sign in with a password and an email"
+//		report.startLevel("Step 7 - error handeling");
+//		gearBest_SignInPage.incorrectLoginInformation();
+//		report.endLevel();
+
 	}
+
 
 
 	private void initTestParams() throws Exception {

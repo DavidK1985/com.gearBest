@@ -21,6 +21,9 @@ public class GearBest_SignInPage extends AbstractPage{
 	private static final By2 faceBookSignInButton = new By2("The sign in through facebbok button", By.xpath("//i[@class='icon-fb']"));
 	private static final By2 gmailSignInButton = new By2("The sign in through Gmail button", By.xpath("//i[@class='icon-gplus']"));
 
+	private static final By2 signInErrorMSG = new By2("This message type appears when the login is invalid", By.xpath("//p[@class='form_msg form_msg-error']"));
+	private static final By2 informationErrorMSG = new By2("This message type appears when the login is invalid", By.xpath("//div[contains(text(),'incorrect']"));
+
 	public GearBest_SignInPage(WebDriver driver) throws Exception {
 		super(driver,signIn);
 	}
@@ -46,7 +49,7 @@ public class GearBest_SignInPage extends AbstractPage{
 	public void writeToEmailInputBox(String email) {
 		bot.writeToElement(emailBox, email);
 	}
-	public void signInButton(String password) {
+	public void writeToPasswordInputBox(String password) {
 		bot.writeToElement(passwordBox, password);
 	}
 
@@ -60,35 +63,69 @@ public class GearBest_SignInPage extends AbstractPage{
 		report.step("By pressing the facebook icon we are moved to the facebookpage registry");
 		return new ExternalLinks(driver);
 	}
-	
+
 	public ExternalLinks gmailSignInButton() throws Exception {
 		bot.click(gmailSignInButton);
 		return new ExternalLinks(driver);
 	}
-	
+
+	public void inValidAct() {
+		if(bot.isElementDisplayed1(signInErrorMSG)) {
+			report.step("This way to login is invalid");
+		}
+	}
+	public void incorrectLoginInformation() throws Exception {
+		if(bot.isElementDisplayed1(informationErrorMSG)) {
+			report.step("This way to login is invalid");
+		}
+	}
+
 	public String randomEmailGenerator() {
 		String lexicon = "ABCDEFGHIJKLMNOPQRSTUVWXYZ12345674890";
 		String email;
-		
+
 		java.util.Random rand = new java.util.Random();
 		Set<String> identifiers = new HashSet<String>();
-		
-		 String randomIdentifier;
-		    StringBuilder builder = new StringBuilder();
-		    while(builder.toString().length() == 0) {
-		        int length = rand.nextInt(5)+5;
-		        for(int i = 0; i < length; i++) {
-		            builder.append(lexicon.charAt(rand.nextInt(lexicon.length())));
-		        }
-		        if(identifiers.contains(builder.toString())) {
-		            builder = new StringBuilder();
-		        }
-		    }
-		    randomIdentifier = builder.toString();
-		
-		    email=randomIdentifier+"@gmail.com";
-		
+
+		String randomIdentifier;
+		StringBuilder builder = new StringBuilder();
+		while(builder.toString().length() == 0) {
+			int length = rand.nextInt(5)+5;
+			for(int i = 0; i < length; i++) {
+				builder.append(lexicon.charAt(rand.nextInt(lexicon.length())));
+			}
+			if(identifiers.contains(builder.toString())) {
+				builder = new StringBuilder();
+			}
+		}
+		randomIdentifier = builder.toString();
+
+		email=randomIdentifier+"@gmail.com";
+
 		return email;
+	}
+
+	public String randomPasswordGenerator() {
+		String lexicon = "ABCDEFGHIJKLMNOPQRSTUVWXYZ12345674890";
+		String password;
+
+		java.util.Random rand = new java.util.Random();
+		Set<String> identifiers = new HashSet<String>();
+
+		StringBuilder builder = new StringBuilder();
+		while(builder.toString().length() == 0) {
+			int length = rand.nextInt(5)+5;
+			for(int i = 0; i < length; i++) {
+				builder.append(lexicon.charAt(rand.nextInt(lexicon.length())));
+			}
+			if(identifiers.contains(builder.toString())) {
+				builder = new StringBuilder();
+			}
+		}
+		password = builder.toString();
+
+
+		return password;
 	}
 
 }

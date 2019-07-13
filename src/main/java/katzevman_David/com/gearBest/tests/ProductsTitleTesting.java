@@ -62,6 +62,9 @@ public class ProductsTitleTesting extends AbstractTest {
 		// Step 6 - product page 
 		report.startLevel("Step 6 - compering the product name to the one seen in the result page");
 			GearBest_AccsesDeniedPage gearBestAccsesDeniedPage = new GearBest_AccsesDeniedPage(driver);
+
+//			Thread.sleep(1000);
+			
 			boolean failedToLoad = gearBestAccsesDeniedPage.accessDenied();
 			while(failedToLoad) {
 				resultNumber = resultIndex();

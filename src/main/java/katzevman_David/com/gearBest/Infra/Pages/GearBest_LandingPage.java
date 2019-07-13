@@ -11,7 +11,6 @@ import katzevman_David.com.gearBest.Infra.web.By2;
 public class GearBest_LandingPage extends AbstractPage {
 
 	private static final By2 newUserCoupon = new By2("Coupon on login", By.className("siteNewUser_content"));
-	private static final By2 gearBestHomeButton = new By2("The Home Button", By.className("headLogo"));
 	private static final By2 searchBox = new By2("Main search box", By.className("headSearch_formIpt"));
 	private static final By2 goButton = new By2("'Go' button", By.id("js-btnSubmitSearch"));
 	private static final By2 newUserCouponXButton = new By2 ("X Button", By.className("layui-layer-setwin"));
@@ -25,7 +24,7 @@ public class GearBest_LandingPage extends AbstractPage {
 	//	private static final By2 amazonMusicLink = new By2("'Amazon Music' link", By.xpath("//a[text()='Amazon Music']"));
 
 	public GearBest_LandingPage(WebDriver driver) throws Exception {
-		super(driver,newUserCoupon);
+		super(driver,searchBox);
 	}
 
 	
@@ -119,9 +118,7 @@ public class GearBest_LandingPage extends AbstractPage {
 	//		bot.waitForElementToBeClickable(signInSecurlyButtonBy);
 	//	}
 
-	//	public void clickAmazonMusicLink() {
-	//		bot.click(amazonMusicLink);
-	//	}
+	
 
 
 }
