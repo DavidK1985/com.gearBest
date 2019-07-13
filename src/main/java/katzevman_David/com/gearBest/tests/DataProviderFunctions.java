@@ -9,8 +9,8 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import katzevman_David.com.gearBest.Infra.utils.AssertUtils;
-import katzevman_David.com.gearBest.Infra.Pages.GearBestLandingPage;
-import katzevman_David.com.gearBest.Infra.Pages.GearBestSearchResultsPage;
+import katzevman_David.com.gearBest.Infra.Pages.GearBest_LandingPage;
+import katzevman_David.com.gearBest.Infra.Pages.GearBest_SearchResultsPage;
 import katzevman_David.com.gearBest.Infra.config.MainConfig;
 import katzevman_David.com.gearBest.Infra.entities.SearchItem;
 
@@ -21,10 +21,10 @@ public class DataProviderFunctions extends AbstractTest{
 	public void searchFromMainLandingPage(SearchItem searchItem) throws Exception{
 		browseToUrl(MainConfig.baseUrl);
 
-		GearBestLandingPage gearBestLandingPage = new GearBestLandingPage(driver);
+		GearBest_LandingPage gearBestLandingPage = new GearBest_LandingPage(driver);
 		gearBestLandingPage.writeToSearchbox(searchItem.searchTerm);
 		
-		GearBestSearchResultsPage gearBestSearchResultsPage = gearBestLandingPage.clickOnGoButton();
+		GearBest_SearchResultsPage gearBestSearchResultsPage = gearBestLandingPage.clickOnGoButton();
 		takeScreenshot("\"" + searchItem.searchTerm + "\" - Search results");
 		
 		String searchResultTitle = gearBestSearchResultsPage.getSearchResultTitleByIndex(searchItem.itemIndex);

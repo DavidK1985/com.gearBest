@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 
 import katzevman_David.com.gearBest.Infra.web.By2;
 
-public class GearBestLandingPage extends AbstractPage {
+public class GearBest_LandingPage extends AbstractPage {
 
 	private static final By2 newUserCoupon = new By2("Coupon on login", By.className("siteNewUser_content"));
 	private static final By2 gearBestHomeButton = new By2("The Home Button", By.className("headLogo"));
@@ -16,6 +16,7 @@ public class GearBestLandingPage extends AbstractPage {
 	private static final By2 goButton = new By2("'Go' button", By.id("js-btnSubmitSearch"));
 	private static final By2 newUserCouponXButton = new By2 ("X Button", By.className("layui-layer-setwin"));
 	private static final By2 superDealsBanner = new By2 ("Super deals banner", By.xpath("//div[@class='indexDeals_banner']"));
+	private static final By2 SignInBy = new By2 ("Sign in icon", By.xpath("//span[@class='headUser_linkLogin']"));
 
 
 
@@ -23,11 +24,11 @@ public class GearBestLandingPage extends AbstractPage {
 	//	private static final By2 signInSecurlyButtonBy = new By2("'Sign-in securely' button", By.id("a-autoid-0-announce"));
 	//	private static final By2 amazonMusicLink = new By2("'Amazon Music' link", By.xpath("//a[text()='Amazon Music']"));
 
-	public GearBestLandingPage(WebDriver driver) throws Exception {
+	public GearBest_LandingPage(WebDriver driver) throws Exception {
 		super(driver,newUserCoupon);
 	}
 
-	//, gearBestHomeButton, searchBox, goButton
+	
 	public void closePopup() {
 		if(bot.isElementDisplayed1(newUserCouponXButton)) {
 			bot.click(newUserCouponXButton);
@@ -38,15 +39,15 @@ public class GearBestLandingPage extends AbstractPage {
 		bot.writeToElement(searchBox, searchTerm);
 	}
 
-	public GearBestSearchResultsPage clickOnGoButton() throws Exception {
+	public GearBest_SearchResultsPage clickOnGoButton() throws Exception {
 		bot.click(goButton);
-		return new GearBestSearchResultsPage(driver);
+		return new GearBest_SearchResultsPage(driver);
 	}
 
-	public GearBestProductFlashSalePage clickSuperDealsBanner() throws Exception {
+	public GearBest_ProductFlashSalePage clickSuperDealsBanner() throws Exception {
 		scrallDownPage();
 		bot.click(superDealsBanner);
-		return new GearBestProductFlashSalePage(driver);
+		return new GearBest_ProductFlashSalePage(driver);
 	}
 
 	public int mainCategoriesCount() {
@@ -79,8 +80,8 @@ public class GearBestLandingPage extends AbstractPage {
 	public ExternalLinks mobileIosApp() throws Exception {
 		scrallDownPage();
 
-		By2 mobileSiteLink = new By2 ("Super deals banner", By.xpath("//aside//i[@class='icon-qrcode']"));
-		By2 iosLink = new By2 ("Super deals banner", By.xpath("//aside//a/img[@alt='App for ios']"));
+		By2 mobileSiteLink = new By2 ("Icon for the external stores", By.xpath("//aside//i[@class='icon-qrcode']"));
+		By2 iosLink = new By2 ("Button for the Apple store", By.xpath("//aside//a/img[@alt='App for ios']"));
 
 		bot.hoverOverElement(mobileSiteLink);
 		bot.click(iosLink);
@@ -92,15 +93,25 @@ public class GearBestLandingPage extends AbstractPage {
 	public ExternalLinks mobileAndroidApp() throws Exception{
 		scrallDownPage();
 
-		By2 mobileSiteLink = new By2 ("Super deals banner", By.xpath("//aside//i[@class='icon-qrcode']"));
-		By2 androidLink = new By2 ("Super deals banner", By.xpath("//aside//a/img[@alt='App for android']"));
+		By2 mobileSiteLink = new By2 ("Icon for the external stores", By.xpath("//aside//i[@class='icon-qrcode']"));
+		By2 androidLink = new By2 ("Button for the Goggle store", By.xpath("//aside//a/img[@alt='App for android']"));
 
 		bot.hoverOverElement(mobileSiteLink);
 		bot.click(androidLink);
 		
 		return new ExternalLinks(driver);
 	}
-
+	
+	public GearBest_SignInPage signIn() throws Exception{
+		
+		
+		while(bot.isElementDisplayed1(SignInBy)) {
+			bot.hoverOverElement(SignInBy);			
+			By2 signInButton = new By2 ("Button to move to the sign in page", By.xpath("//a[@class='headUser_btnLogin']"));
+			bot.click(signInButton);
+		}
+		return new GearBest_SignInPage(driver);
+	}
 
 
 	//	

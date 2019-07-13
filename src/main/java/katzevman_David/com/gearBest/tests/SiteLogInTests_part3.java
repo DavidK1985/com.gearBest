@@ -6,21 +6,22 @@ import java.util.Properties;
 
 import org.testng.annotations.Test;
 
-import katzevman_David.com.gearBest.Infra.Pages.GearBestLandingPage;
+import katzevman_David.com.gearBest.Infra.Pages.GearBest_LandingPage;
+import katzevman_David.com.gearBest.Infra.Pages.GearBest_SignInPage;
 import katzevman_David.com.gearBest.Infra.config.MainConfig;
 
 
-public class SiteLogInTests extends AbstractTest {
+public class SiteLogInTests_part3 extends AbstractTest {
 
 
 	@Test (groups = {"Regression"})
-	public void _0_09_gearBestLoginTests() throws Exception {
+	public void _0_11_gearBest_basicFunctions_LoginTests_3() throws Exception {
 
 		initTestParams();
 		// Step 1 - Browse to GearBest.com landing page
 		report.startLevel("Step 1 - Browse to GearBest.com landing page");
 		browseToUrl(MainConfig.baseUrl);
-		GearBestLandingPage gearBestLandingPage = new GearBestLandingPage(driver);
+		GearBest_LandingPage gearBestLandingPage = new GearBest_LandingPage(driver);
 		report.endLevel();
 
 		// Step 2 - Close the coupon
@@ -28,7 +29,17 @@ public class SiteLogInTests extends AbstractTest {
 		gearBestLandingPage.closePopup();
 		report.endLevel();
 
-	
+		// Step 3 - Go to the sign in page
+		report.startLevel("Step 3 - ");
+		GearBest_SignInPage gearBest_SignInPage = gearBestLandingPage.signIn();
+		report.endLevel();
+
+		// Step 4 - checking the external links to sign in
+		report.startLevel("Step 4 - checking the sign in with diffrent passwords and emails");
+		String email = gearBest_SignInPage.randomEmailGenerator();
+		gearBest_SignInPage.writeToEmailInputBox(email);
+//		gearBest_SignInPage.clickSignInButton();
+		report.endLevel();
 	}
 
 
@@ -36,7 +47,7 @@ public class SiteLogInTests extends AbstractTest {
 		Properties prop = new Properties();
 		InputStream input = new FileInputStream("src/main/resources/config/shoppingCartTest.properties");
 		prop.load(input);
-	
+
 	}
 
 

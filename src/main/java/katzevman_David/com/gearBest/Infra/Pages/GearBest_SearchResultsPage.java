@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 
 import katzevman_David.com.gearBest.Infra.web.By2;
 
-public class GearBestSearchResultsPage extends AbstractPage{
+public class GearBest_SearchResultsPage extends AbstractPage{
 
 	private static final By2 gearBestHomeButton = new By2("The Home Button", By.className("headLogo"));
 	private static final By2 amountOfResultsFound = new By2("Aamount of results found ", By.xpath("//h1[@class='cateMain_cateTitle']/span"));
@@ -13,7 +13,7 @@ public class GearBestSearchResultsPage extends AbstractPage{
 
 
 
-	public GearBestSearchResultsPage(WebDriver driver) throws Exception {
+	public GearBest_SearchResultsPage(WebDriver driver) throws Exception {
 		super(driver);
 	}
 
@@ -28,11 +28,11 @@ public class GearBestSearchResultsPage extends AbstractPage{
 		return bot.getElementText(resultTitle);
 	}
 
-	public GearBestProductPage clickOnSearchResultTitle(int resultIndex) throws Exception {
+	public GearBest_ProductPage clickOnSearchResultTitle(int resultIndex) throws Exception {
 
 		By2 randomResultchoice = new By2("results number "+ resultIndex +" in the search page" , By.xpath("//li[@data-index='" + resultIndex + "']"));
 		bot.click(randomResultchoice);
-		return new GearBestProductPage(driver);
+		return new GearBest_ProductPage(driver);
 	}
 
 	public String ChosenProduct(int resultIndex) {

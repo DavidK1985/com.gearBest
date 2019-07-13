@@ -6,8 +6,8 @@ import java.util.Properties;
 import java.util.Random;
 import org.testng.annotations.Test;
 
-import katzevman_David.com.gearBest.Infra.Pages.GearBestLandingPage;
-import katzevman_David.com.gearBest.Infra.Pages.GearBestSearchResultsPage;
+import katzevman_David.com.gearBest.Infra.Pages.GearBest_LandingPage;
+import katzevman_David.com.gearBest.Infra.Pages.GearBest_SearchResultsPage;
 import katzevman_David.com.gearBest.Infra.config.MainConfig;
 
 
@@ -25,7 +25,7 @@ public class BasicUserFlow extends AbstractTest {
 		// Step 1 - Browse to GearBest.com landing page
 		report.startLevel("Step 1 - Browse to GearBest.com landing page");
 		browseToUrl(MainConfig.baseUrl);
-		GearBestLandingPage gearBestLandingPage = new GearBestLandingPage(driver);
+		GearBest_LandingPage gearBestLandingPage = new GearBest_LandingPage(driver);
 		report.endLevel();
 
 		// Step 2 - Close the coupon
@@ -36,7 +36,7 @@ public class BasicUserFlow extends AbstractTest {
 		// Step 3 - Write a search term from the shopping cart text file in the search bar and click the search button
 		report.startLevel("Step 3 - Write a search term from the shopping cart text file in the search bar");
 		gearBestLandingPage.writeToSearchbox(searchTerm);
-		GearBestSearchResultsPage gearBestSearchResultsPage = gearBestLandingPage.clickOnGoButton();
+		GearBest_SearchResultsPage gearBestSearchResultsPage = gearBestLandingPage.clickOnGoButton();
 		report.endLevel();
 
 		// Step 4 - compare the results to the search term		

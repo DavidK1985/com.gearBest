@@ -4,10 +4,10 @@ import java.util.Random;
 
 import org.testng.annotations.Test;
 
-import katzevman_David.com.gearBest.Infra.Pages.GearBestAccsesDeniedPage;
-import katzevman_David.com.gearBest.Infra.Pages.GearBestLandingPage;
-import katzevman_David.com.gearBest.Infra.Pages.GearBestProductFlashSalePage;
-import katzevman_David.com.gearBest.Infra.Pages.GearBestSearchResultsPage;
+import katzevman_David.com.gearBest.Infra.Pages.GearBest_AccsesDeniedPage;
+import katzevman_David.com.gearBest.Infra.Pages.GearBest_LandingPage;
+import katzevman_David.com.gearBest.Infra.Pages.GearBest_ProductFlashSalePage;
+import katzevman_David.com.gearBest.Infra.Pages.GearBest_SearchResultsPage;
 import katzevman_David.com.gearBest.Infra.config.MainConfig;
 
 public class MainCategoriesTesting_FlashSale extends AbstractTest{
@@ -18,12 +18,12 @@ public class MainCategoriesTesting_FlashSale extends AbstractTest{
 	// different sale at a different price
 	
 	@Test (groups = {"Regression"})
-	public void _0_04_gearBestFlashSale() throws Exception {
+	public void _0_05_gearBestFlashSale() throws Exception {
 
 		// Step 1 - Browse to GearBest.com landing page
 		report.startLevel("Step 1 - Browse to GearBest.com landing page");
 		browseToUrl(MainConfig.baseUrl);
-		GearBestLandingPage gearBestLandingPage = new GearBestLandingPage(driver);
+		GearBest_LandingPage gearBestLandingPage = new GearBest_LandingPage(driver);
 		report.endLevel();
 
 		// Step 2 - Close the coupon
@@ -33,7 +33,7 @@ public class MainCategoriesTesting_FlashSale extends AbstractTest{
 
 		// Step 3 - scrawling down and pressing the SuperDealsBanner
 		report.startLevel("Step 3 - scrawl down and click the SuperDeals Banner");
-		GearBestProductFlashSalePage gearBestProductFlashSalePage = gearBestLandingPage.clickSuperDealsBanner();
+		GearBest_ProductFlashSalePage gearBestProductFlashSalePage = gearBestLandingPage.clickSuperDealsBanner();
 		report.endLevel();
 
 		// Step 4 - get the details for an item on sale
@@ -45,9 +45,9 @@ public class MainCategoriesTesting_FlashSale extends AbstractTest{
 		// Step 5 - activate a search with the chosen item
 		report.startLevel("Step 5 - taking the randomly chosen product name and searching gear box to see if it truly is the better deal");
 		gearBestProductFlashSalePage.writeToSearchbox(resultTitle);
-		GearBestSearchResultsPage gearBestSearchResultsPage = gearBestLandingPage.clickOnGoButton();
+		GearBest_SearchResultsPage gearBestSearchResultsPage = gearBestLandingPage.clickOnGoButton();
 		
-		GearBestAccsesDeniedPage gearBestAccsesDeniedPage = new GearBestAccsesDeniedPage(driver);
+		GearBest_AccsesDeniedPage gearBestAccsesDeniedPage = new GearBest_AccsesDeniedPage(driver);
 		boolean failedToLoad = gearBestAccsesDeniedPage.accessDenied();
 		while(failedToLoad) {
 			resultNumber = resultIndex();

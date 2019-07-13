@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 
 import katzevman_David.com.gearBest.Infra.web.By2;
 
-public class GearBestProductPage extends AbstractPage {
+public class GearBest_ProductPage extends AbstractPage {
 
 
 	private static final By2 currentPrice = new By2("The current price for the item", By.xpath("//div[@class='goodsIntro_priceWrap']/span[@data-currency]"));
@@ -17,7 +17,7 @@ public class GearBestProductPage extends AbstractPage {
 	private static final By2 gearBestHomeButton = new By2("The Home Button", By.className("headLogo"));
 	private static final By2 categoryTree = new By2("The category tree for this product", By.xpath("//ul[@class='cGoodsCrumb_wrap']"));
 
-	public GearBestProductPage(WebDriver driver) throws Exception {
+	public GearBest_ProductPage(WebDriver driver) throws Exception {
 		super(driver);
 	}
 

@@ -8,10 +8,10 @@ import java.util.concurrent.TimeUnit;
 
 import org.testng.annotations.Test;
 
-import katzevman_David.com.gearBest.Infra.Pages.GearBestAccsesDeniedPage;
-import katzevman_David.com.gearBest.Infra.Pages.GearBestLandingPage;
-import katzevman_David.com.gearBest.Infra.Pages.GearBestProductPage;
-import katzevman_David.com.gearBest.Infra.Pages.GearBestSearchResultsPage;
+import katzevman_David.com.gearBest.Infra.Pages.GearBest_AccsesDeniedPage;
+import katzevman_David.com.gearBest.Infra.Pages.GearBest_LandingPage;
+import katzevman_David.com.gearBest.Infra.Pages.GearBest_ProductPage;
+import katzevman_David.com.gearBest.Infra.Pages.GearBest_SearchResultsPage;
 import katzevman_David.com.gearBest.Infra.config.MainConfig;
 
 
@@ -24,13 +24,13 @@ public class SearchBarTesting extends AbstractTest {
 	//and searching for another item
 
 	@Test (groups = {"Regression"})
-	public void _0_03_gearBestSearchbarTests() throws Exception {
+	public void _0_04_gearBestSearchbarTests() throws Exception {
 
 		initTestParams();
 		// Step 1 - Browse to GearBest.com landing page
 		report.startLevel("Step 1 - Browse to GearBest.com landing page");
 		browseToUrl(MainConfig.baseUrl);
-		GearBestLandingPage gearBestLandingPage = new GearBestLandingPage(driver);
+		GearBest_LandingPage gearBestLandingPage = new GearBest_LandingPage(driver);
 		report.endLevel();
 
 		// Step 2 - Close the coupon
@@ -41,7 +41,7 @@ public class SearchBarTesting extends AbstractTest {
 		// Step 3 - Write a search term from the shopping cart text file in the search bar and click the search button
 		report.startLevel("Step 3 - Write a search term from the shopping cart text file in the search bar");
 		gearBestLandingPage.writeToSearchbox(searchTerm);
-		GearBestSearchResultsPage gearBestSearchResultsPage = gearBestLandingPage.clickOnGoButton();
+		GearBest_SearchResultsPage gearBestSearchResultsPage = gearBestLandingPage.clickOnGoButton();
 		report.endLevel();
 
 		// Step 4 - Checking the search result on a random item 
@@ -54,12 +54,12 @@ public class SearchBarTesting extends AbstractTest {
 		// Step 5 - entering the product page 
 		report.startLevel("Step 5 - entering the product page");
 		gearBestSearchResultsPage.ChosenProduct(resultNumber);
-		GearBestProductPage gearBestProductPage = gearBestSearchResultsPage.clickOnSearchResultTitle(resultNumber);
+		GearBest_ProductPage gearBestProductPage = gearBestSearchResultsPage.clickOnSearchResultTitle(resultNumber);
 		report.endLevel();
 
 		// Step 6 - Going back to the home page 
 		report.startLevel("Step 6 - Going back to the home page");
-		GearBestAccsesDeniedPage gearBestAccsesDeniedPage = new GearBestAccsesDeniedPage(driver);
+		GearBest_AccsesDeniedPage gearBestAccsesDeniedPage = new GearBest_AccsesDeniedPage(driver);
 		boolean failedToLoad = gearBestAccsesDeniedPage.accessDenied();
 		while(failedToLoad) {
 			resultNumber = resultIndex();

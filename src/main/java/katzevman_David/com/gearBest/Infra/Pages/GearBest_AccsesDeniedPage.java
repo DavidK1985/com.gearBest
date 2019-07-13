@@ -6,11 +6,11 @@ import org.openqa.selenium.WebDriver;
 
 import katzevman_David.com.gearBest.Infra.web.By2;
 
-public class GearBestAccsesDeniedPage extends AbstractPage{
+public class GearBest_AccsesDeniedPage extends AbstractPage{
 
 	private static final By2 accessDenied = new By2("The failure to access the product page headline", By.xpath("//h1[contains(text(),'Access Denied')]"));
 
-	public GearBestAccsesDeniedPage(WebDriver driver) throws Exception {
+	public GearBest_AccsesDeniedPage(WebDriver driver) throws Exception {
 		super(driver);
 	}
 

@@ -3,18 +3,18 @@ package katzevman_David.com.gearBest.tests;
 import org.testng.annotations.Test;
 
 import katzevman_David.com.gearBest.Infra.Pages.ExternalLinks;
-import katzevman_David.com.gearBest.Infra.Pages.GearBestLandingPage;
+import katzevman_David.com.gearBest.Infra.Pages.GearBest_LandingPage;
 import katzevman_David.com.gearBest.Infra.config.MainConfig;
 
 public class ExternalLinks_part2 extends AbstractTest {
 		
 		
 		@Test (groups = {"Regression"})
-		public void _0_07_gearBestLinkTest2() throws Exception {
+		public void _0_08_gearBestLinkTest2() throws Exception {
 			// Step 1 - Browse to GearBest.com landing page
 			report.startLevel("Step 1 - Browse to GearBest.com landing page");
 			browseToUrl(MainConfig.baseUrl);
-			GearBestLandingPage gearBestLandingPage = new GearBestLandingPage(driver);
+			GearBest_LandingPage gearBestLandingPage = new GearBest_LandingPage(driver);
 			report.endLevel();
 
 			// Step 2 - Close the coupon
@@ -29,7 +29,7 @@ public class ExternalLinks_part2 extends AbstractTest {
 			
 			// Step 4 - confirmation
 			report.startLevel("Step 4 - confirm the link sent us to the app store");
-			externalLinks.externalSiteConfirmation();
+			externalLinks.externalSiteConfirmation("Google play store");
 			report.endLevel();
 		}
 		

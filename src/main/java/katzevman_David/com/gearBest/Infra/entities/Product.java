@@ -2,8 +2,6 @@ package katzevman_David.com.gearBest.Infra.entities;
 
 import java.awt.geom.Arc2D.Float;
 
-import katzevman_David.com.gearBest.Infra.web.By2;
-
 public class Product {
 
 	public static String[][] resultsFoundArray;

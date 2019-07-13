@@ -5,11 +5,11 @@ import org.openqa.selenium.WebDriver;
 
 import katzevman_David.com.gearBest.Infra.web.By2;
 
-public class GearBestProductFlashSalePage extends AbstractPage{
+public class GearBest_ProductFlashSalePage extends AbstractPage{
 
 	private static final By2 searchBox = new By2("Main search box", By.className("headSearch_formIpt"));
 
-	public GearBestProductFlashSalePage(WebDriver driver) throws Exception {
+	public GearBest_ProductFlashSalePage(WebDriver driver) throws Exception {
 		super(driver);
 	}
 

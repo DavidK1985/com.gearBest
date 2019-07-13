@@ -2,27 +2,27 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="16968" started-at="2019-07-11T18:28:38Z" finished-at="2019-07-11T18:28:55Z">
+  <suite name="Default suite" duration-ms="22407" started-at="2019-07-13T08:55:38Z" finished-at="2019-07-13T08:56:00Z">
     <groups>
       <group name="Regression">
-        <method signature="Test6._0_06_gearBestLinkTest1()[pri:0, instance:katzevman_David.com.gearBest.tests.Test6@3fee9989]" name="_0_06_gearBestLinkTest1" class="katzevman_David.com.gearBest.tests.Test6"/>
+        <method signature="SiteLogInTests_part2._0_10_gearBest_basicFunctions_LoginTests_2()[pri:0, instance:katzevman_David.com.gearBest.tests.SiteLogInTests_part2@3fee9989]" name="_0_10_gearBest_basicFunctions_LoginTests_2" class="katzevman_David.com.gearBest.tests.SiteLogInTests_part2"/>
       </group> <!-- Regression -->
     </groups>
-    <test name="Default test" duration-ms="16968" started-at="2019-07-11T18:28:38Z" finished-at="2019-07-11T18:28:55Z">
-      <class name="katzevman_David.com.gearBest.tests.Test6">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:katzevman_David.com.gearBest.tests.Test6@3fee9989]" name="beforeTest" is-config="true" duration-ms="3608" started-at="2019-07-11T18:28:38Z" finished-at="2019-07-11T18:28:42Z">
+    <test name="Default test" duration-ms="22407" started-at="2019-07-13T08:55:38Z" finished-at="2019-07-13T08:56:00Z">
+      <class name="katzevman_David.com.gearBest.tests.SiteLogInTests_part2">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:katzevman_David.com.gearBest.tests.SiteLogInTests_part2@3fee9989]" name="beforeTest" is-config="true" duration-ms="3641" started-at="2019-07-13T08:55:38Z" finished-at="2019-07-13T08:55:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="_0_06_gearBestLinkTest1()[pri:0, instance:katzevman_David.com.gearBest.tests.Test6@3fee9989]" name="_0_06_gearBestLinkTest1" duration-ms="12496" started-at="2019-07-11T18:28:42Z" finished-at="2019-07-11T18:28:55Z">
+        <test-method status="PASS" signature="_0_10_gearBest_basicFunctions_LoginTests_2()[pri:0, instance:katzevman_David.com.gearBest.tests.SiteLogInTests_part2@3fee9989]" name="_0_10_gearBest_basicFunctions_LoginTests_2" duration-ms="17772" started-at="2019-07-13T08:55:41Z" finished-at="2019-07-13T08:55:59Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- _0_06_gearBestLinkTest1 -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:katzevman_David.com.gearBest.tests.Test6@3fee9989]" name="afterTest" is-config="true" duration-ms="830" started-at="2019-07-11T18:28:55Z" finished-at="2019-07-11T18:28:55Z">
+        </test-method> <!-- _0_10_gearBest_basicFunctions_LoginTests_2 -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:katzevman_David.com.gearBest.tests.SiteLogInTests_part2@3fee9989]" name="afterTest" is-config="true" duration-ms="964" started-at="2019-07-13T08:55:59Z" finished-at="2019-07-13T08:56:00Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-      </class> <!-- katzevman_David.com.gearBest.tests.Test6 -->
+      </class> <!-- katzevman_David.com.gearBest.tests.SiteLogInTests_part2 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
