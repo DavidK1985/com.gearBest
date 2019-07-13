@@ -16,7 +16,7 @@ public class BasicUserFlow extends AbstractTest {
 	private String searchTerm;
 	// search for an object from the shopping cart text file on gear best and see that the result contains it
 	
-	@Test (groups = {"Regression"})
+	@Test (groups = {"Sanity"})
 	public void _0_01_gearBestLandingPageSearch() throws Exception {
 
 		initTestParams();

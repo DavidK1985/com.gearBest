@@ -9,7 +9,7 @@ import katzevman_David.com.gearBest.Infra.config.MainConfig;
 public class ExternalLinks_part1 extends AbstractTest {
 
 
-	@Test (groups = {"Regression"})
+	@Test (groups = {"Sanity"})
 	public void _0_07_gearBestLinkTest1() throws Exception {
 		// Step 1 - Browse to GearBest.com landing page
 		report.startLevel("Step 1 - Browse to GearBest.com landing page");

@@ -15,7 +15,8 @@ public class GearBest_AccsesDeniedPage extends AbstractPage{
 	}
 
 	public boolean accessDenied() throws Exception {
-		//		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+		
+
 		boolean webFailure = false; 
 		if(bot.isElementDisplayed1(accessDenied)) {
 			webFailure = true;

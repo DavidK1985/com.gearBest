@@ -4,11 +4,11 @@
 <suite name="Gear Best Sanity Tests" verbose="1">
 
 	<!-- Run all tests in the specified classes -->
-	<test name="Regression">
+	<test name="Sanity">
 		<groups>
 			<run>
-				<include name="Regression" />
-				<exclude name="Sanity" />
+				<include name="Sanity" />
+				<exclude name="Regression" />
 			</run>
 		</groups>
 

@@ -1,46 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="9" total="12" passed="3">
+<testng-results skipped="0" failed="0" ignored="6" total="12" passed="6">
   <reporter-output>
   </reporter-output>
-  <suite name="Gear Best Sanity Tests" duration-ms="125241" started-at="2019-07-13T14:29:29Z" finished-at="2019-07-13T14:31:35Z">
+  <suite name="Gear Best Sanity Tests" duration-ms="83652" started-at="2019-07-13T17:43:28Z" finished-at="2019-07-13T17:44:52Z">
     <groups>
       <group name="Sanity">
-        <method signature="MainCategoriesTesting._0_06_gearBestIndevidualCategoryTest()[pri:0, instance:katzevman_David.com.gearBest.tests.MainCategoriesTesting@3159c4b8]" name="_0_06_gearBestIndevidualCategoryTest" class="katzevman_David.com.gearBest.tests.MainCategoriesTesting"/>
-        <method signature="MainCategoriesTesting_FlashSale._0_05_gearBestFlashSale()[pri:0, instance:katzevman_David.com.gearBest.tests.MainCategoriesTesting_FlashSale@73846619]" name="_0_05_gearBestFlashSale" class="katzevman_David.com.gearBest.tests.MainCategoriesTesting_FlashSale"/>
-        <method signature="ProductsDiscountTesting._0_02_gearBestIndevidualProductTest_1()[pri:0, instance:katzevman_David.com.gearBest.tests.ProductsDiscountTesting@4bec1f0c]" name="_0_02_gearBestIndevidualProductTest_1" class="katzevman_David.com.gearBest.tests.ProductsDiscountTesting"/>
+        <method signature="BasicUserFlow._0_01_gearBestLandingPageSearch()[pri:0, instance:katzevman_David.com.gearBest.tests.BasicUserFlow@3159c4b8]" name="_0_01_gearBestLandingPageSearch" class="katzevman_David.com.gearBest.tests.BasicUserFlow"/>
+        <method signature="ExternalLinks_part1._0_07_gearBestLinkTest1()[pri:0, instance:katzevman_David.com.gearBest.tests.ExternalLinks_part1@73846619]" name="_0_07_gearBestLinkTest1" class="katzevman_David.com.gearBest.tests.ExternalLinks_part1"/>
+        <method signature="ExternalLinks_part2._0_08_gearBestLinkTest2()[pri:0, instance:katzevman_David.com.gearBest.tests.ExternalLinks_part2@4bec1f0c]" name="_0_08_gearBestLinkTest2" class="katzevman_David.com.gearBest.tests.ExternalLinks_part2"/>
+        <method signature="SiteLogInTests_part1._0_09_gearBest_basicFunctions_LoginTests_1()[pri:0, instance:katzevman_David.com.gearBest.tests.SiteLogInTests_part1@29ca901e]" name="_0_09_gearBest_basicFunctions_LoginTests_1" class="katzevman_David.com.gearBest.tests.SiteLogInTests_part1"/>
+        <method signature="SiteLogInTests_part2._0_10_gearBest_basicFunctions_LoginTests_2()[pri:0, instance:katzevman_David.com.gearBest.tests.SiteLogInTests_part2@5649fd9b]" name="_0_10_gearBest_basicFunctions_LoginTests_2" class="katzevman_David.com.gearBest.tests.SiteLogInTests_part2"/>
+        <method signature="SiteLogInTests_part3._0_11_gearBest_basicFunctions_LoginTests_3()[pri:0, instance:katzevman_David.com.gearBest.tests.SiteLogInTests_part3@6adede5]" name="_0_11_gearBest_basicFunctions_LoginTests_3" class="katzevman_David.com.gearBest.tests.SiteLogInTests_part3"/>
       </group> <!-- Sanity -->
     </groups>
-    <test name="Regression" duration-ms="125241" started-at="2019-07-13T14:29:29Z" finished-at="2019-07-13T14:31:35Z">
-      <class name="katzevman_David.com.gearBest.tests.ProductsDiscountTesting">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:katzevman_David.com.gearBest.tests.ProductsDiscountTesting@4bec1f0c]" name="beforeTest" is-config="true" duration-ms="1" started-at="2019-07-13T14:31:05Z" finished-at="2019-07-13T14:31:05Z">
+    <test name="Sanity" duration-ms="83652" started-at="2019-07-13T17:43:28Z" finished-at="2019-07-13T17:44:52Z">
+      <class name="katzevman_David.com.gearBest.tests.BasicUserFlow">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:katzevman_David.com.gearBest.tests.BasicUserFlow@3159c4b8]" name="beforeTest" is-config="true" duration-ms="3615" started-at="2019-07-13T17:43:28Z" finished-at="2019-07-13T17:43:32Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="_0_02_gearBestIndevidualProductTest_1()[pri:0, instance:katzevman_David.com.gearBest.tests.ProductsDiscountTesting@4bec1f0c]" name="_0_02_gearBestIndevidualProductTest_1" duration-ms="30165" started-at="2019-07-13T14:31:05Z" finished-at="2019-07-13T14:31:35Z">
+        <test-method status="PASS" signature="_0_01_gearBestLandingPageSearch()[pri:0, instance:katzevman_David.com.gearBest.tests.BasicUserFlow@3159c4b8]" name="_0_01_gearBestLandingPageSearch" duration-ms="7506" started-at="2019-07-13T17:43:32Z" finished-at="2019-07-13T17:43:39Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- _0_02_gearBestIndevidualProductTest_1 -->
-      </class> <!-- katzevman_David.com.gearBest.tests.ProductsDiscountTesting -->
-      <class name="katzevman_David.com.gearBest.tests.MainCategoriesTesting">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:katzevman_David.com.gearBest.tests.MainCategoriesTesting@3159c4b8]" name="beforeTest" is-config="true" duration-ms="3593" started-at="2019-07-13T14:29:29Z" finished-at="2019-07-13T14:29:33Z">
+        </test-method> <!-- _0_01_gearBestLandingPageSearch -->
+      </class> <!-- katzevman_David.com.gearBest.tests.BasicUserFlow -->
+      <class name="katzevman_David.com.gearBest.tests.SiteLogInTests_part1">
+        <test-method status="PASS" signature="_0_09_gearBest_basicFunctions_LoginTests_1()[pri:0, instance:katzevman_David.com.gearBest.tests.SiteLogInTests_part1@29ca901e]" name="_0_09_gearBest_basicFunctions_LoginTests_1" duration-ms="15226" started-at="2019-07-13T17:43:54Z" finished-at="2019-07-13T17:44:09Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="_0_06_gearBestIndevidualCategoryTest()[pri:0, instance:katzevman_David.com.gearBest.tests.MainCategoriesTesting@3159c4b8]" name="_0_06_gearBestIndevidualCategoryTest" duration-ms="33240" started-at="2019-07-13T14:29:33Z" finished-at="2019-07-13T14:30:06Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- _0_06_gearBestIndevidualCategoryTest -->
-      </class> <!-- katzevman_David.com.gearBest.tests.MainCategoriesTesting -->
-      <class name="katzevman_David.com.gearBest.tests.MainCategoriesTesting_FlashSale">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:katzevman_David.com.gearBest.tests.MainCategoriesTesting_FlashSale@73846619]" name="beforeTest" is-config="true" duration-ms="0" started-at="2019-07-13T14:30:06Z" finished-at="2019-07-13T14:30:06Z">
+        </test-method> <!-- _0_09_gearBest_basicFunctions_LoginTests_1 -->
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:katzevman_David.com.gearBest.tests.SiteLogInTests_part1@29ca901e]" name="beforeTest" is-config="true" duration-ms="0" started-at="2019-07-13T17:43:54Z" finished-at="2019-07-13T17:43:54Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="_0_05_gearBestFlashSale()[pri:0, instance:katzevman_David.com.gearBest.tests.MainCategoriesTesting_FlashSale@73846619]" name="_0_05_gearBestFlashSale" duration-ms="58202" started-at="2019-07-13T14:30:06Z" finished-at="2019-07-13T14:31:05Z">
+      </class> <!-- katzevman_David.com.gearBest.tests.SiteLogInTests_part1 -->
+      <class name="katzevman_David.com.gearBest.tests.ExternalLinks_part2">
+        <test-method status="PASS" signature="_0_08_gearBestLinkTest2()[pri:0, instance:katzevman_David.com.gearBest.tests.ExternalLinks_part2@4bec1f0c]" name="_0_08_gearBestLinkTest2" duration-ms="8927" started-at="2019-07-13T17:44:09Z" finished-at="2019-07-13T17:44:18Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- _0_05_gearBestFlashSale -->
-      </class> <!-- katzevman_David.com.gearBest.tests.MainCategoriesTesting_FlashSale -->
-    </test> <!-- Regression -->
+        </test-method> <!-- _0_08_gearBestLinkTest2 -->
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:katzevman_David.com.gearBest.tests.ExternalLinks_part2@4bec1f0c]" name="beforeTest" is-config="true" duration-ms="0" started-at="2019-07-13T17:44:09Z" finished-at="2019-07-13T17:44:09Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+      </class> <!-- katzevman_David.com.gearBest.tests.ExternalLinks_part2 -->
+      <class name="katzevman_David.com.gearBest.tests.ExternalLinks_part1">
+        <test-method status="PASS" signature="_0_07_gearBestLinkTest1()[pri:0, instance:katzevman_David.com.gearBest.tests.ExternalLinks_part1@73846619]" name="_0_07_gearBestLinkTest1" duration-ms="14759" started-at="2019-07-13T17:43:39Z" finished-at="2019-07-13T17:43:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- _0_07_gearBestLinkTest1 -->
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:katzevman_David.com.gearBest.tests.ExternalLinks_part1@73846619]" name="beforeTest" is-config="true" duration-ms="0" started-at="2019-07-13T17:43:39Z" finished-at="2019-07-13T17:43:39Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+      </class> <!-- katzevman_David.com.gearBest.tests.ExternalLinks_part1 -->
+      <class name="katzevman_David.com.gearBest.tests.SiteLogInTests_part3">
+        <test-method status="PASS" signature="_0_11_gearBest_basicFunctions_LoginTests_3()[pri:0, instance:katzevman_David.com.gearBest.tests.SiteLogInTests_part3@6adede5]" name="_0_11_gearBest_basicFunctions_LoginTests_3" duration-ms="12413" started-at="2019-07-13T17:44:40Z" finished-at="2019-07-13T17:44:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- _0_11_gearBest_basicFunctions_LoginTests_3 -->
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:katzevman_David.com.gearBest.tests.SiteLogInTests_part3@6adede5]" name="beforeTest" is-config="true" duration-ms="0" started-at="2019-07-13T17:44:40Z" finished-at="2019-07-13T17:44:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+      </class> <!-- katzevman_David.com.gearBest.tests.SiteLogInTests_part3 -->
+      <class name="katzevman_David.com.gearBest.tests.SiteLogInTests_part2">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:katzevman_David.com.gearBest.tests.SiteLogInTests_part2@5649fd9b]" name="beforeTest" is-config="true" duration-ms="0" started-at="2019-07-13T17:44:18Z" finished-at="2019-07-13T17:44:18Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="_0_10_gearBest_basicFunctions_LoginTests_2()[pri:0, instance:katzevman_David.com.gearBest.tests.SiteLogInTests_part2@5649fd9b]" name="_0_10_gearBest_basicFunctions_LoginTests_2" duration-ms="21144" started-at="2019-07-13T17:44:18Z" finished-at="2019-07-13T17:44:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- _0_10_gearBest_basicFunctions_LoginTests_2 -->
+      </class> <!-- katzevman_David.com.gearBest.tests.SiteLogInTests_part2 -->
+    </test> <!-- Sanity -->
   </suite> <!-- Gear Best Sanity Tests -->
 </testng-results>

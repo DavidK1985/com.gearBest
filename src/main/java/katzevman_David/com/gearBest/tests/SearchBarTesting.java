@@ -83,7 +83,7 @@ public class SearchBarTesting extends AbstractTest {
 			failedToLoad = gearBestAccsesDeniedPage.accessDenied();
 			counter++;
 			if(counter>3) {
-				report.step("After over 7 triels we can confirm that the search bar is non respunsive");
+				report.step("After over 4 triels we can confirm that the search bar is non respunsive");
 				break;			
 			}
 		}

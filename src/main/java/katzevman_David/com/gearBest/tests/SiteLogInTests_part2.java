@@ -15,7 +15,7 @@ import katzevman_David.com.gearBest.Infra.config.MainConfig;
 public class SiteLogInTests_part2 extends AbstractTest {
 
 
-	@Test (groups = {"Regression"})
+	@Test (groups = {"Sanity"})
 	public void _0_10_gearBest_basicFunctions_LoginTests_2() throws Exception {
 
 		initTestParams();
@@ -36,10 +36,9 @@ public class SiteLogInTests_part2 extends AbstractTest {
 		report.endLevel();
 
 		// Step 4 - checking sign in functionality
-		report.startLevel("Step 4 - ");
-		gearBest_SignInPage.clickRegisterMenue();
-		
-		gearBest_SignInPage.clickSignInMenue();
+		report.startLevel("Step 4 - checking Sign In menu functionality");
+		gearBest_SignInPage.clickRegisterMenu();
+		gearBest_SignInPage.clickSignInMenu();
 		report.endLevel();
 
 		// Step 5 - checking the external links to sign in

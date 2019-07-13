@@ -1,32 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Gear Best Sanity Tests]">
-  <test thread-count="5" name="Regression(failed)">
-    <groups>
-      <run>
-        <include name="Regression"/>
-        <exclude name="Sanity"/>
-      </run>
-    </groups>
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="katzevman_David.com.gearBest.tests.MainCategoriesTesting">
+      <class name="katzevman_David.com.gearBest.tests.DataProviderFunctions">
         <methods>
-          <include name="_0_06_gearBestIndevidualCategoryTest"/>
+          <include name="afterTest"/>
+          <include name="searchFromMainLandingPage" invocation-numbers="1"/>
           <include name="beforeTest"/>
         </methods>
-      </class> <!-- katzevman_David.com.gearBest.tests.MainCategoriesTesting -->
-      <class name="katzevman_David.com.gearBest.tests.ProductsDiscountTesting">
-        <methods>
-          <include name="_0_02_gearBestIndevidualProductTest_1"/>
-          <include name="beforeTest"/>
-        </methods>
-      </class> <!-- katzevman_David.com.gearBest.tests.ProductsDiscountTesting -->
-      <class name="katzevman_David.com.gearBest.tests.ProductsTitleTesting">
-        <methods>
-          <include name="_0_03_gearBestIndevidualProductTest_2"/>
-          <include name="beforeTest"/>
-        </methods>
-      </class> <!-- katzevman_David.com.gearBest.tests.ProductsTitleTesting -->
+      </class> <!-- katzevman_David.com.gearBest.tests.DataProviderFunctions -->
     </classes>
-  </test> <!-- Regression(failed) -->
-</suite> <!-- Failed suite [Gear Best Sanity Tests] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

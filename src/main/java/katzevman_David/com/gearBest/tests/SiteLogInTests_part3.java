@@ -14,7 +14,7 @@ import katzevman_David.com.gearBest.Infra.config.MainConfig;
 public class SiteLogInTests_part3 extends AbstractTest {
 
 
-	@Test (groups = {"Regression"})
+	@Test (groups = {"Sanity"})
 	public void _0_11_gearBest_basicFunctions_LoginTests_3() throws Exception {
 
 		initTestParams();
@@ -62,7 +62,7 @@ public class SiteLogInTests_part3 extends AbstractTest {
 		report.endLevel();
 		
 //		//"Step 7 - checking the sign in with a password and an email"
-//		report.startLevel("Step 7 - error handeling");
+//		report.startLevel("Step 7 - error handling");
 //		gearBest_SignInPage.incorrectLoginInformation();
 //		report.endLevel();
 

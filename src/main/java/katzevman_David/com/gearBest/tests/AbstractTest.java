@@ -2,7 +2,6 @@ package katzevman_David.com.gearBest.tests;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -24,8 +23,7 @@ public abstract class AbstractTest {
 	protected static WebDriver driver;
 
 	
-	
-	@BeforeMethod(alwaysRun=true)
+	@BeforeMethod (alwaysRun = true)
 	public void beforeTest() throws IOException {
 		
 		MainConfig.initFromFile("src/main/resources/config/MainConfig.properties");
@@ -56,8 +54,8 @@ public abstract class AbstractTest {
 	public void afterTest() throws Exception {
 		
 		takeScreenshot("Browser state at test end");
-		MainConfig.closeBrowserAtTestEnd = true;
-		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+//		MainConfig.closeBrowserAtTestEnd = true;
+	
 		if (driver != null && MainConfig.closeBrowserAtTestEnd) {
 			driver.close();
 		}

@@ -59,6 +59,11 @@ public class ActionBot {
 		return text;
 	}
 	
+	public void waitForElement(By2 elementLocator) {
+		report.log("Wait for element: " + elementLocator);
+		webDriverWait.until(ExpectedConditions.presenceOfElementLocated(elementLocator.by));
+	}
+	
 	public void waitForElementToBeClickable(By2 elementLocator) {
 		report.log("Wait for element: " + elementLocator + " to be clickable");
 		webDriverWait.until(ExpectedConditions.elementToBeClickable(elementLocator.by));

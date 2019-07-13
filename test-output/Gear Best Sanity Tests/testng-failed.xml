@@ -4,29 +4,18 @@
   <test thread-count="5" name="Regression(failed)">
     <groups>
       <run>
-        <include name="Regression"/>
+        <include name="ProductsAndCategories"/>
         <exclude name="Sanity"/>
+        <exclude name="Regression"/>
       </run>
     </groups>
     <classes>
-      <class name="katzevman_David.com.gearBest.tests.MainCategoriesTesting">
+      <class name="katzevman_David.com.gearBest.tests.MainCategoriesTesting_FlashSale">
         <methods>
-          <include name="_0_06_gearBestIndevidualCategoryTest"/>
+          <include name="_0_05_gearBestFlashSale"/>
           <include name="beforeTest"/>
         </methods>
-      </class> <!-- katzevman_David.com.gearBest.tests.MainCategoriesTesting -->
-      <class name="katzevman_David.com.gearBest.tests.ProductsDiscountTesting">
-        <methods>
-          <include name="_0_02_gearBestIndevidualProductTest_1"/>
-          <include name="beforeTest"/>
-        </methods>
-      </class> <!-- katzevman_David.com.gearBest.tests.ProductsDiscountTesting -->
-      <class name="katzevman_David.com.gearBest.tests.ProductsTitleTesting">
-        <methods>
-          <include name="_0_03_gearBestIndevidualProductTest_2"/>
-          <include name="beforeTest"/>
-        </methods>
-      </class> <!-- katzevman_David.com.gearBest.tests.ProductsTitleTesting -->
+      </class> <!-- katzevman_David.com.gearBest.tests.MainCategoriesTesting_FlashSale -->
     </classes>
   </test> <!-- Regression(failed) -->
 </suite> <!-- Failed suite [Gear Best Sanity Tests] -->

@@ -28,7 +28,7 @@ public class GearBest_SignInPage extends AbstractPage{
 		super(driver,signIn);
 	}
 
-	public void clickSignInMenue() {
+	public void clickSignInMenu() {
 		bot.click(signIn);
 		List<WebElement> Counter = driver.findElements(By.xpath("//div[@class='authForm_wrap']//div[@class='authForm_item js-formGroup']"));
 		int totalCount = Counter.size();
@@ -37,7 +37,7 @@ public class GearBest_SignInPage extends AbstractPage{
 		}
 	}
 
-	public void clickRegisterMenue() {
+	public void clickRegisterMenu() {
 		bot.click(register);
 		List<WebElement> Counter = driver.findElements(By.xpath("//div[@class='authForm_item js-formGroup']"));
 		int totalCount = Counter.size();

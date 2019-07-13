@@ -21,7 +21,7 @@ public class ProductsTitleTesting extends AbstractTest {
 	private int resultNumber = resultIndex();
 	// search for an object from the shopping cart text file on gear best and see that a specific product is the same in the product page as it appears in the search results page
 
-	@Test (groups = {"Regression"})
+	@Test 
 	public void _0_03_gearBestIndevidualProductTest_2() throws Exception {
 
 		initTestParams();
@@ -63,7 +63,7 @@ public class ProductsTitleTesting extends AbstractTest {
 		report.startLevel("Step 6 - compering the product name to the one seen in the result page");
 			GearBest_AccsesDeniedPage gearBestAccsesDeniedPage = new GearBest_AccsesDeniedPage(driver);
 
-//			Thread.sleep(1000);
+			Thread.sleep(1000);
 			
 			boolean failedToLoad = gearBestAccsesDeniedPage.accessDenied();
 			while(failedToLoad) {

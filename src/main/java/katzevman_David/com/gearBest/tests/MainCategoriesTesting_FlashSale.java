@@ -17,7 +17,7 @@ public class MainCategoriesTesting_FlashSale extends AbstractTest{
 	// going into the flash sale page on gear best and see if the product that appears on the sale does not appear in a 
 	// different sale at a different price
 	
-	@Test (groups = {"Sanity"})
+	@Test 
 	public void _0_05_gearBestFlashSale() throws Exception {
 
 		// Step 1 - Browse to GearBest.com landing page
@@ -47,7 +47,7 @@ public class MainCategoriesTesting_FlashSale extends AbstractTest{
 		gearBestProductFlashSalePage.writeToSearchbox(resultTitle);
 		GearBest_SearchResultsPage gearBestSearchResultsPage = gearBestLandingPage.clickOnGoButton();
 		
-//		Thread.sleep(1000);
+		Thread.sleep(1000);
 		
 		GearBest_AccsesDeniedPage gearBestAccsesDeniedPage = new GearBest_AccsesDeniedPage(driver);
 		boolean failedToLoad = gearBestAccsesDeniedPage.accessDenied();
@@ -72,7 +72,7 @@ public class MainCategoriesTesting_FlashSale extends AbstractTest{
 
 		// Step 7 - if there are any other products that are similar compare prices, if the one on hot sell is cheaper 
 		// then report PASS other wise report FAIL
-		report.startLevel("Step 7 - ");
+		report.startLevel("Step 7 - Filter the result");
 		gearBestSearchResultsPage.trueFlashSale(productAmount, ProductPrice, resultTitle);
 		report.endLevel();
 
